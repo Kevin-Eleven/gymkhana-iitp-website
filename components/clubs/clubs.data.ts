@@ -22,7 +22,7 @@ export const societies: Section = {
   items: [
     {
       name: 'STC',
-      logo: 'https://stc.iitp.ac.in/assets/img/logo.png',
+      logo: 'https://th.bing.com/th/id/R.bab771e2aa0abc8a31b9c066702a2c12?rik=cu10CgSnqXaydQ&riu=http%3a%2f%2fstciitphybrid.in%2fimages%2fstc-logo.jpg&ehk=ugh3h05T9j62VGoFPNeRiGObp2%2fuAAHizEnFi6uL1Lg%3d&risl=&pid=ImgRaw&r=0',
       description:
         'Student Technical Council unifies technical clubs, research activities, and projects, fostering collaboration and innovation among students.',
       facebook: 'https://www.facebook.com/stc.iitp/',
@@ -32,33 +32,33 @@ export const societies: Section = {
       name: 'HOSCA',
       logo: '/images/hosca.png',
       description:
-        'HoSCA promotes a diverse and engaging campus experience through cultural events that unite people from different backgrounds.',
+        'HoSCA promotes a diverse and engaging campus experience through cultural events that unite people from different backgrounds. The club organizes activities that foster lifelong learning, community interaction, and showcase the talent of student managers.',
       facebook: 'https://www.facebook.com/iitp.sociocultural/',
       instagram: 'https://www.instagram.com/hosca_iitp/',
     },
     {
       name: 'Sports',
-      logo: 'https://www.iitp.ac.in/sports/images/SPORTS_IITPATNA.png',
+      logo: 'https://www.iitp.ac.in/sports/photo/logo.png',
       description:
-        'The Sports Council fosters athletic excellence, teamwork, discipline, and healthy competition.',
+        'The Sports Council at IIT Patna is where passion meets athleticism. We provide a platform for students to unleash their sporting prowess, fostering teamwork, discipline, and a healthy competitive spirit. Join us and let the games begin!',
     },
     {
       name: 'Academics',
-      logo: '/images/logo.png',
+      logo: './images/IITPATNA.webp',
       description:
-        'The Academics Council promotes intellectual growth, academic excellence, and innovation.',
+        'The Academics Council at IIT Patna is the intellectual hub where knowledge thrives. We strive to create a conducive environment for academic excellence, fostering curiosity, critical thinking, and innovation. Join us on a journey of intellectual growth and endless possibilities.',
     },
     {
       name: 'SWB',
-      logo: '/images/logo.png',
+      logo: './images/IITPATNA.webp',
       description:
-        'The Student Welfare Body ensures well-being, guidance, and student support.',
+        'The Student Welfare Body at IIT Patna is the pillar of support and care for every student. We work tirelessly to ensure the well-being and happiness of our students, providing guidance, resources, and fostering a sense of belonging. Join us in creating a nurturing community where every student thrives.',
     },
     {
       name: 'Mess',
-      logo: '/images/logo.png',
+      logo: './images/IITPATNA.webp',
       description:
-        'The Mess Committee strives to provide nutritious and satisfying meals.',
+        'The Mess Committee at IIT Patna strives to provide delicious and nutritious meals, catering to diverse tastes and dietary needs. Join us in creating a satisfying dining experience for all.',
     },
   ],
 };
@@ -75,7 +75,7 @@ export const stcClubs: Section = {
       name: 'ACE',
       logo: '/images/clublogos/ACElogo.webp',
       description:
-        'Association of Civil Engineers facilitates workshops, student-faculty interaction, and academic growth.',
+        'The Association of Civil Engineers is an official club of the Department of Civil and Environmental Engineering at IIT Patna. It aims to facilitate student-faculty interaction, provide a platform for showcasing work and knowledge, and enhance abilities through workshops and events.',
       facebook: 'https://www.facebook.com/ACE.IITP',
       instagram: 'https://www.instagram.com/ace_iitp',
       linkedin: 'https://www.linkedin.com/company/ace-iit-patna',
@@ -93,7 +93,7 @@ export const stcClubs: Section = {
       name: 'AP Club',
       logo: '/images/clublogos/APCIITPatnalogo.webp',
       description:
-        'Astronomy & Particle Physics club explores discoveries from nano-worlds to the cosmos.',
+        'The Astronomy and Particle Physics Club at IIT Patna explores the universe through observation, research, and hands-on activities from meteor showers to black hole mysteries for both seasoned stargazers and curious beginners',
       facebook: 'https://www.facebook.com/apclub.iitp',
       instagram: 'https://www.instagram.com/apclub.iitp/',
       linkedin: 'https://www.linkedin.com/company/ap-club-iitp',
@@ -102,7 +102,7 @@ export const stcClubs: Section = {
       name: 'SCME',
       logo: '/images/clublogos/SCMELogo.webp',
       description:
-        'Mechanical engineering society conducting lectures, workshops, and technical events.',
+        'SCME was founded with the motive of engaging and encouraging Mechanical Engineering discipline related activities in IIT Patna. Since its inception, SCME has been conducting events, lectures and workshops round the year for the benefit of mechanical engineering students.',
       facebook: 'https://www.facebook.com/SCMEIITP/',
       instagram: 'https://www.instagram.com/scme_iitp/',
     },
@@ -110,7 +110,7 @@ export const stcClubs: Section = {
       name: 'MATES',
       logo: '/images/clublogos/Mateslogo.webp',
       description:
-        'Materials Engineering society cultivating curiosity, creativity, and ethics.',
+        'MaTES is a collaborative effort by students and faculty at IIT Patna to cultivate curiosity and interest in metallurgy and materials. Through engaging events, workshops, and guest lectures, they aim to enhance creativity, ethics, and societal awareness related to materials.',
       facebook: 'https://www.facebook.com/MatES.IITP/',
       instagram: 'https://instagram.com/mates__iitp',
       linkedin:
@@ -120,7 +120,7 @@ export const stcClubs: Section = {
       name: 'ChESSx',
       logo: '/images/clublogos/ChESSxLogo.webp',
       description:
-        'Chemical engineering society bridging academic knowledge and industry skills.',
+        'ChESSx stands for Chemical Engineering Students’ Society, IIT Patna . It aims to foster academic excellence, technical curiosity, and professional development among students through workshops, seminars, industry interactions, competitions, and collaborative projects. ChESSx also serves as a platform for students to connect with faculty, alumni, and industry experts while promoting innovation and learning in the field of chemical engineering.',
       facebook: 'https://www.facebook.com/chemicaliitp/',
       instagram: 'https://instagram.com/chessx_iitp',
     },
@@ -128,7 +128,7 @@ export const stcClubs: Section = {
       name: 'Sparkonics',
       logo: '/images/clublogos/sparkonicsLogo.webp',
       description:
-        'Electrical engineering society tackling real-world engineering challenges.',
+        'We are the Electronics Society of IIT Patna. In our club, we dive into how microcontrollers are designed, how digital logic is implemented, and how hardware and software come together to build real systems. We spend time experimenting with circuits, programming MCUs, and understanding the logic behind embedded and digital designs.',
       facebook: 'https://www.facebook.com/sparkonics',
       instagram: 'https://www.instagram.com/sparkonics.iitp/',
       linkedin: 'https://in.linkedin.com/company/sparkonics',
@@ -137,7 +137,7 @@ export const stcClubs: Section = {
       name: 'Phoenix (Robocon)',
       logo: '/images/clublogos/Phoenix.png',
       description:
-        'Official robotics contingent of IIT Patna participating in ABU Robocon.',
+        'Team Phoenix is the official robotics team of Indian Institute of Technology Patna (IIT Patna), dedicated to designing, building, and advancing innovative robotic systems. The team provides a collaborative platform for students to work on cutting-edge technologies in robotics, automation, and intelligent systems while gaining strong practical and research-oriented experience.  The team actively participates in prestigious national and international robotics competitions such as ABU Robocon, Indian Robotics Competition (I‑RoC), and e-Yantra Robotics Competition, along with various other robotics events and technical challenges. Through these competitions, members apply engineering principles to solve complex real-world problems and showcase technological innovation.  Team Phoenix works across multiple domains including CAD design, hardware prototyping, electronics, embedded systems, ROS, software development, and machine learning. By fostering teamwork, creativity, and technical excellence, the club aims to promote robotics culture at IIT Patna and represent the institute on leading robotics platforms.',
       facebook: 'https://www.facebook.com/teamphoenixiitp/',
       instagram: 'https://instagram.com/robocon.iitp',
     },
@@ -145,7 +145,7 @@ export const stcClubs: Section = {
       name: "Tinkerer's",
       logo: '/images/clublogos/TinkersLogo.webp',
       description:
-        'A student-run lab encouraging hands-on building and creative freedom.',
+        "Tinkerer's Lab at IIT Patna allows you to build things on your own, from scratch. This gives you practical and hands-on experience. The lab is almost entirely student run.The lack of deadlines and pressure allows you to tinker and develop your ideas with full freedom.",
       facebook: 'https://www.facebook.com/TInkerersLabIITP/',
       instagram: 'https://instagram.com/tinkerers_lab_iitp',
       linkedin: 'https://www.linkedin.com/company/tinkerers-lab-iitp',
@@ -154,20 +154,20 @@ export const stcClubs: Section = {
       name: 'MoodBoard',
       logo: '/images/clublogos/MoodBoard.webp',
       description:
-        'Design club fostering visual, product, and UX design skills.',
+        'The Moodboard Design Club of Indian Institute of Technology Patna is a student-led creative community focused on design, visual storytelling, and digital creativity. The club brings together students interested in areas like graphic design, UI/UX, branding, illustration',
       instagram: 'https://instagram.com/designclub.iitp',
     },
     {
       name: 'RNA Club',
       logo: '/images/clublogos/RnALogo.webp',
       description:
-        'Robotics and Aviation club focusing on drones and MAVs.',
+        'RNA Club (Rocketry and Aviation Club) is a student driven club that works on projects related to rocketry and aviation. The club’s work includes designing and building model rockets, studying aerodynamics and propulsion, and conducting experiments and launches to gain practical experience in aerospace.',
     },
     {
       name: 'Finance',
       logo: '/images/clublogos/FinanceClubIITPLogo.webp',
       description:
-        'Finance club focusing on consulting, investing, and product management.',
+        'The Finance Club, IIT Patna aims to promote interest and understanding of finance, investment, and financial markets among students. It organizes workshops, competitions, and discussions to develop practical financial and analytical skills.',
       instagram: 'https://www.instagram.com/financeclub.iitp/',
       linkedin: 'https://www.linkedin.com/company/finance-club-iit-patna',
     },
@@ -186,70 +186,70 @@ export const hoscaClubs: Section = {
       name: 'HOOT',
       logo: '/images/clublogos/hoot.webp',
       description:
-        'Official speaking arts society refining debates, extempore, and storytelling.',
+        'HOOT, the House of Oratory Talents at IIT Patna, is the official speaking arts society. It provides a dynamic platform for refining public speaking skills, engaging in debates, extempore sessions, and storytelling. Hoot cultivates confident speakers who inspire change.',
       instagram: 'https://instagram.com/hoot.iitp',
     },
     {
       name: 'Yavanika',
       logo: '/images/clublogos/yavanika.webp',
       description:
-        'Dramatics society passionate about theatre and street plays.',
+        'Yavanika is the dramatics society of IIT Patna, a vibrant collective of passionate performers, storytellers, and theatre enthusiasts who believe in the power of stage to inspire thought and emotion. Through stage plays, street plays, mime, and mono-acts, Yavanika brings stories to life that reflect society, challenge perspectives, and spark meaningful conversations. The society actively nurtures creativity, teamwork, and artistic expression, providing a platform for students to explore the art of theatre while representing IIT Patna at various cultural events and competitions.  Driven by dedication and creativity, Yavanika continues to build a culture where talent meets purpose, turning performances into powerful experiences both on and off the stage. 🎭',
       instagram: 'https://instagram.com/yavanika_iitp',
     },
     {
       name: 'Quiz Club',
       logo: '/images/clublogos/quiz.webp',
       description:
-        'Accio Quiz Wizards engage minds through trivia and puzzles.',
+        'Join Accio Quiz Wizards, a platform for knowledge enthusiasts. Engage in trivia, puzzles, and quizzes that sharpen your wits. Embark on an enchanting journey where fun meets learning, and knowledge reigns supreme. Let the games begin!',
       instagram: 'https://instagram.com/qc_iitp',
     },
     {
       name: 'Syahi',
       logo: '/images/clublogos/syahi.webp',
       description:
-        'Literary society celebrating poetry, prose, and creative writing.',
+        "Welcome to Syahi, the literary society at IIT Patna, where the power of literature and poetry is celebrated. Engage in discussions, recitals, and creative writing sessions that ignite the imagination. Let's weave a symphony of literary brilliance together at Syahi.",
       instagram: 'https://instagram.com/syahi.iitp',
     },
     {
       name: 'Pixxel',
       logo: '/images/clublogos/Pixxel.webp',
       description:
-        'Photography and videography club covering events and films.',
+        'Pixxel, the official photography and videography club at IIT Patna, welcomes individuals passionate about capturing the essence of the world. Join to develop skills in screenplay writing, storytelling, cinematography, and video editing. Engage in projects like yearbook videos, event coverage, and short films for Inter IIT competitions.',
       instagram: 'https://instagram.com/pixxel_iitp',
     },
     {
       name: 'Anime Club',
       logo: '/images/clublogos/anime.webp',
       description:
-        'Celebrating anime culture through screenings and discussions.',
+        'Join the College Anime Club at IIT Patna to rediscover the joy of animation. Immerse yourself in imaginative worlds, connect with relatable characters, and celebrate anime culture through discussions, screenings, and cosplay. Let your imagination soar in this vibrant realm of animated wonders.',
       instagram: 'https://instagram.com/animeclub_iitp',
     },
     {
       name: 'Vincetroke',
       logo: '/images/clublogos/Vincetroke.webp',
       description:
-        'Fine arts club conducting inclusive art workshops.',
+        "Vincetroke at IIT Patna fosters a vibrant fine arts section. Talented artists conduct inclusive workshops throughout the year, offering opportunities to explore and refine skills in various art forms. The students' awe-inspiring talents are showcased through exquisite sketches and paintings, reflecting their deep love for the art.",
       instagram: 'https://instagram.com/vincetroke.iitp',
     },
     {
       name: 'Aria',
       logo: '/images/clublogos/aria.webp',
       description:
-        'Music society where collaboration and performance thrive.',
+        'Aria, the Music Society of IIT Patna, embraces the belief that music is a language of the soul. The club offers a haven for passionate music enthusiasts to express themselves through various genres. Members collaborate, perform, and jam, captivating the campus community with their musical talents and upholding a rich legacy of musical excellence.',
       instagram: 'https://instagram.com/aria_iitp',
     },
     {
       name: 'Exousia',
       logo: '/images/clublogos/exousia.webp',
       description:
-        'Dance club embracing styles from classical to hip-hop.',
+        'Exousia, the dance club at IIT Patna, provides a vibrant platform for dancers to explore diverse styles and express their passion. From Indian classical to hip-hop and Bollywood, we celebrate the joy of movement. Join us and let creativity and expression take center stage.',
       instagram: 'https://instagram.com/exousia_iitp',
     },
     {
       name: 'Hexachrome',
       logo: '/images/clublogos/hexa.webp',
       description:
-        'Puzzle-solving club sharpening minds through challenges.',
+        'Hexachrome, the Puzzle-solving Club at IIT Patna, offers a welcoming environment to explore diverse puzzles, stimulating cognitive development and critical thinking. Join our community to relieve stress and embark on a journey of mind-bending challenges and endless curiosity.',
       instagram: 'https://instagram.com/hexachrome_official',
     },
   ],

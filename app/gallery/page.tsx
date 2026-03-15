@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import GalleryClient from './GalleryClient';
+import FestsGalleryClient from './fests/FestsGalleryClient';
 
 export const metadata: Metadata = {
   title: 'Gallery | IIT Patna Gymkhana',
@@ -7,5 +8,8 @@ export const metadata: Metadata = {
 };
 
 export default function GalleryPage() {
-  return <GalleryClient />;
+  return <>
+    <GalleryClient />
+   {/* <FestsGalleryClient/> */}
+  </>;
 }

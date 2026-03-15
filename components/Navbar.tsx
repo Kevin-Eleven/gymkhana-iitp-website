@@ -44,7 +44,7 @@ export default function Navbar() {
           : 'bg-white'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="mx-auto  px-4">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -59,7 +59,7 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex">
-            <ul className="flex items-center gap-6">
+            <ul className="flex items-center gap-8">
               {navLinks.map((link) => (
                 <li
                   key={link.href}
