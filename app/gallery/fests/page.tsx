@@ -1,12 +1,29 @@
-import { Metadata } from 'next';
+import fs from 'fs';
+import path from 'path';
 import FestsGalleryClient from './FestsGalleryClient';
 
-export const metadata: Metadata = {
-  title: 'Fests Gallery | IIT Patna Gymkhana',
-  description:
-    'Gallery of major IIT Patna fests – Anwesha, Celesta, Infinito, Nebula, TEDx, Reverberance',
-};
+function loadFest(folder: string) {
+  const folderPath = path.join(process.cwd(), 'public/images/fest', folder);
 
-export default function FestsGalleryPage() {
-  return <FestsGalleryClient />;
+  if (!fs.existsSync(folderPath)) return [];
+
+  const files = fs
+    .readdirSync(folderPath)
+    .filter((file) => /\.(jpg|jpeg|png|webp)$/i.test(file));
+
+  return files.map((file) => ({
+    src: `/images/fest/${folder}/${file}`,
+    category: folder.toLowerCase(),
+  }));
+}
+
+export default function Page() {
+  const images = [
+    ...loadFest('Anwesha'),
+    ...loadFest('Celesta'),
+    ...loadFest('Infinito'),
+    ...loadFest('TEDx'),
+  ];
+
+  return <FestsGalleryClient images={images} />;
 }

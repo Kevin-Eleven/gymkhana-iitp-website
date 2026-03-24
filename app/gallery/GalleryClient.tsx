@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 type Category =
   | 'all'
@@ -10,7 +11,13 @@ type Category =
   | 'welfare'
   | 'academic'
   | 'stc'
-  | 'hosca';
+  | 'hosca'
+  | 'fests'; 
+
+type ImageItem = {
+  src: string;
+  category: Exclude<Category, 'all' | 'fests'>;
+};
 
 const categories: { label: string; value: Category }[] = [
   { label: 'All', value: 'all' },
@@ -20,17 +27,12 @@ const categories: { label: string; value: Category }[] = [
   { label: 'Academic', value: 'academic' },
   { label: 'STC', value: 'stc' },
   { label: 'Hosca', value: 'hosca' },
+  { label: 'Fests', value: 'fests' },
 ];
 
-const images = [
-  { src: '/images/portfolio/sports/7.jpg', category: 'sports' },
-  { src: '/images/portfolio/sports/Inter IIT19.jpg', category: 'sports' },
-  { src: '/images/portfolio/sports/badminton.jpg', category: 'sports' },
-  { src: '/images/portfolio/Acad/smiriti.jpg', category: 'academic' },
-  { src: '/images/portfolio/Acad/acad_2.jpg', category: 'academic' },
-];
+export default function GalleryClient({ images }: { images: ImageItem[] }) {
 
-export default function GalleryClient() {
+  const router = useRouter();
   const [activeCategory, setActiveCategory] = useState<Category>('all');
 
   const filteredImages =
@@ -38,9 +40,18 @@ export default function GalleryClient() {
       ? images
       : images.filter((img) => img.category === activeCategory);
 
+  const handleClick = (cat: Category) => {
+    if (cat === 'fests') {
+      router.push('/gallery/fests'); 
+      return;
+    }
+    setActiveCategory(cat);
+  };
+
   return (
     <main className="min-h-screen bg-[#f4f7fe] pt-24 px-4">
       <div className="max-w-6xl mx-auto">
+
         <h1 className="text-4xl font-bold text-center text-black mb-12">
           Our Gallery
         </h1>
@@ -50,7 +61,7 @@ export default function GalleryClient() {
           {categories.map((cat) => (
             <button
               key={cat.value}
-              onClick={() => setActiveCategory(cat.value)}
+              onClick={() => handleClick(cat.value)} 
               className={`relative pb-2 transition-colors ${
                 activeCategory === cat.value
                   ? 'text-emerald-600'
@@ -84,14 +95,14 @@ export default function GalleryClient() {
                 <motion.img
                   src={img.src}
                   alt=""
-                  className="w-full h-full object-cover"
+                  className="w-full h-[250px] object-cover"
                   whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.4 }}
                 />
               </motion.div>
             ))}
           </AnimatePresence>
         </motion.div>
+
       </div>
     </main>
   );

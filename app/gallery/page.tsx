@@ -1,15 +1,32 @@
-import { Metadata } from 'next';
+import fs from 'fs';
+import path from 'path';
 import GalleryClient from './GalleryClient';
-import FestsGalleryClient from './fests/FestsGalleryClient';
 
-export const metadata: Metadata = {
-  title: 'Gallery | IIT Patna Gymkhana',
-  description: 'Photo gallery showcasing events and activities of IIT Patna Gymkhana',
-};
+function loadImages(folder: string, category: string) {
+  const folderPath = path.join(process.cwd(), 'public/images/portfolio', folder);
 
-export default function GalleryPage() {
-  return <>
-    <GalleryClient />
-   {/* <FestsGalleryClient/> */}
-  </>;
+  if (!fs.existsSync(folderPath)) return [];
+
+  const files = fs
+    .readdirSync(folderPath)
+    .filter((file) => /\.(jpg|jpeg|png|webp)$/i.test(file));
+
+  return files.map((file) => ({
+    src: `/images/portfolio/${folder}/${file}`,
+    category,
+  }));
+}
+
+export default function Page() {
+
+  const images = [
+    ...loadImages('sports', 'sports'),
+    ...loadImages('Hostels', 'hostel'),
+    ...loadImages('Welfare', 'welfare'),
+    ...loadImages('Acad', 'academic'),
+    ...loadImages('STC', 'stc'),
+    ...loadImages('Hosca', 'hosca'),
+  ];
+
+  return <GalleryClient images={images} />;
 }

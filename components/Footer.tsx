@@ -33,9 +33,9 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-gray-300 text-sm">
               <li><a href="https://www.iitp.ac.in/hostel/">Guest Houses</a></li>
-              <li><a href="https://www.iitp.ac.in/">Medical Unit</a></li>
-              <li><a href="#">TPC</a></li>
-              <li><a href="#">SAC</a></li>
+              <li><a href="https://www.iitp.ac.in/services-&-amenities/medical-unit">Medical Unit</a></li>
+              <li><a href="https://ccdc.iitp.ac.in/">CCDC(TPC)</a></li>
+              <li><a href="https://www.iitp.ac.in/index.php/students/student-activity-center">SAC</a></li>
               <li><a href="http://www.eclubiitp.org/">Entrepreneurship</a></li>
             </ul>
           </div>
