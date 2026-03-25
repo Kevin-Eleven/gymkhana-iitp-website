@@ -22,11 +22,11 @@ export const societies: Section = {
   items: [
     {
       name: 'STC',
-      logo: 'https://th.bing.com/th/id/R.bab771e2aa0abc8a31b9c066702a2c12?rik=cu10CgSnqXaydQ&riu=http%3a%2f%2fstciitphybrid.in%2fimages%2fstc-logo.jpg&ehk=ugh3h05T9j62VGoFPNeRiGObp2%2fuAAHizEnFi6uL1Lg%3d&risl=&pid=ImgRaw&r=0',
+      logo: './images/stc.png',
       description:
         'Student Technical Council unifies technical clubs, research activities, and projects, fostering collaboration and innovation among students.',
       facebook: 'https://www.facebook.com/stc.iitp/',
-      instagram: 'https://www.instagram.com/stc.iitp/',
+      instagram: 'https://www.instagram.com/iitpatna_stc',
     },
     {
       name: 'HOSCA',
@@ -38,7 +38,7 @@ export const societies: Section = {
     },
     {
       name: 'Sports',
-      logo: 'https://www.iitp.ac.in/sports/photo/logo.png',
+      logo: './images/sports.png',
       description:
         'The Sports Council at IIT Patna is where passion meets athleticism. We provide a platform for students to unleash their sporting prowess, fostering teamwork, discipline, and a healthy competitive spirit. Join us and let the games begin!',
     },
@@ -50,7 +50,7 @@ export const societies: Section = {
     },
     {
       name: 'SWB',
-      logo: './images/IITPATNA.webp',
+      logo: './images/swb.png',
       description:
         'The Student Welfare Body at IIT Patna is the pillar of support and care for every student. We work tirelessly to ensure the well-being and happiness of our students, providing guidance, resources, and fostering a sense of belonging. Join us in creating a nurturing community where every student thrives.',
     },
@@ -139,7 +139,7 @@ export const stcClubs: Section = {
       description:
         'Team Phoenix is the official robotics team of Indian Institute of Technology Patna (IIT Patna), dedicated to designing, building, and advancing innovative robotic systems. The team provides a collaborative platform for students to work on cutting-edge technologies in robotics, automation, and intelligent systems while gaining strong practical and research-oriented experience.  The team actively participates in prestigious national and international robotics competitions such as ABU Robocon, Indian Robotics Competition (I‑RoC), and e-Yantra Robotics Competition, along with various other robotics events and technical challenges. Through these competitions, members apply engineering principles to solve complex real-world problems and showcase technological innovation.  Team Phoenix works across multiple domains including CAD design, hardware prototyping, electronics, embedded systems, ROS, software development, and machine learning. By fostering teamwork, creativity, and technical excellence, the club aims to promote robotics culture at IIT Patna and represent the institute on leading robotics platforms.',
       facebook: 'https://www.facebook.com/teamphoenixiitp/',
-      instagram: 'https://instagram.com/robocon.iitp',
+      instagram: 'https://www.instagram.com/teamphoenix.iitp',
     },
     {
       name: "Tinkerer's",
@@ -162,6 +162,7 @@ export const stcClubs: Section = {
       logo: '/images/clublogos/RnALogo.webp',
       description:
         'RNA Club (Rocketry and Aviation Club) is a student driven club that works on projects related to rocketry and aviation. The club’s work includes designing and building model rockets, studying aerodynamics and propulsion, and conducting experiments and launches to gain practical experience in aerospace.',
+      instagram:'https://www.instagram.com/rna.iitp',
     },
     {
       name: 'Finance',
@@ -250,7 +251,7 @@ export const hoscaClubs: Section = {
       logo: '/images/clublogos/hexa.webp',
       description:
         'Hexachrome, the Puzzle-solving Club at IIT Patna, offers a welcoming environment to explore diverse puzzles, stimulating cognitive development and critical thinking. Join our community to relieve stress and embark on a journey of mind-bending challenges and endless curiosity.',
-      instagram: 'https://instagram.com/hexachrome_official',
+      instagram: 'https://www.instagram.com/hexachrome_iitp/',
     },
   ],
 };

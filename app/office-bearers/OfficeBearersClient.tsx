@@ -23,6 +23,63 @@ interface YearGroup {
 
 const years: YearGroup[] = [
   {
+    year: '2025–26',
+    vp: [
+      {
+        name: 'Anirudh Singh',
+        role: "VP Gymkhana '25",
+        image: '/images/office/Anirudh Singh.jpg',
+        email: 'vpgymkhana@iitp.ac.in',
+      },
+    ],
+    secretaries: [
+      {
+        name: 'Akhand Singh',
+        role: "Gensec Tech '25",
+        image: '/images/office/Akhand Singh.jpg',
+        email: 'gensec_tech@iitp.ac.in',
+      },
+      {
+        name: 'Kashika Aggarwal',
+        role: 'Gensec HoSCA',
+        image: '/images/office/Kashika Aggarwal.jpg',
+        email: 'gensec_cult@iitp.ac.in',
+      },
+      {
+        name: 'Arpan Patel',
+        role: 'Gensec Welfare',
+        image: '/images/office/Arpan Patel.jpg',
+        email: 'gensec_welfare@iitp.ac.in',
+      },
+      {
+        name: 'Aashish Mishra',
+        role: 'GenSec HAC',
+        image: '/images/office/Aashish Mishra.jpeg',
+        email: 'gensec_hac@iitp.ac.in',
+      },
+      {
+        name: 'Yeshwanth Gosukonda',
+        role: 'GenSec Sports',
+        image: '/images/office/Yeshwanth Gosukonda.jpeg',
+        email: 'gensec_sports@iitp.ac.in',
+      },
+    ],
+    reps: [
+      {
+        name: 'Yash Raj',
+        role: 'UG Representative',
+        image: '/images/office/Yash Raj.jpeg',
+        email: 'ugr@iitp.ac.in',
+      },
+      {
+        name: 'Nikhil Kumar',
+        role: 'PG Representative',
+        image: '/images/office/No_Image_Available.jpg',
+        email: 'pgr_gymkhana@iitp.ac.in',
+      },
+    ],
+  },
+  {
     year: '2024–25',
     vp: [
       {
@@ -57,6 +114,7 @@ const years: YearGroup[] = [
         name: 'Panav Arpit Raaj',
         role: 'UG Representative',
         image: '/images/office/panav.jpg',
+        email: 'pranav_2101cb43@iitp.ac.in',
       },
       {
         name: 'Aashish Ranjan',
