@@ -159,7 +159,7 @@ export const stcClubs: Section = {
     },
     {
       name: 'RNA Club',
-      logo: '/images/clublogos/RnALogo.webp',
+      logo: '/images/clublogos/RnALogo.jpg',
       description:
         'RNA Club (Rocketry and Aviation Club) is a student driven club that works on projects related to rocketry and aviation. The club’s work includes designing and building model rockets, studying aerodynamics and propulsion, and conducting experiments and launches to gain practical experience in aerospace.',
       instagram:'https://www.instagram.com/rna.iitp',
@@ -172,8 +172,49 @@ export const stcClubs: Section = {
       instagram: 'https://www.instagram.com/financeclub.iitp/',
       linkedin: 'https://www.linkedin.com/company/finance-club-iit-patna',
     },
+    {
+      name: 'QTC',
+      logo: '/images/clublogos/QTC.jpg',
+      description:
+        'The Quantum Technology Club at IIT Patna is a hub for students interested in quantum computing, communication, and emerging technologies. We organize workshops, discussions, and projects to foster learning, innovation, and collaboration in this cutting-edge field.',
+      instagram: 'https://www.instagram.com/qtc.iitp?igsh=MXNmOWVxNjhncXZzbw==',
+    },
+    {
+      name: '⁠DWDG',
+      logo: '/images/clublogos/DWDG.jpg',
+      description:
+        " DWDG is an international student network and think tank, connecting over 1,000 members across 40+ campuses in 15 countries. The Future Leaders Program, developed by Do Well Do Good, is a 22-week curriculum. Students go through intensive training, assignments,project-based learning, and research to develop and enhance their do well do good leadership and application skills.",
+      instagram: 'https://www.instagram.com/dwdg.iitp/',
+      linkedin: 'https://www.linkedin.com/company/do-well-do-good-future-leaders-iit-patna-chapter',
+    },
+    {
+      name: '⁠⁠TIC',
+      logo: '/images/clublogos/TIC.jpg',
+      description:
+        "IIT Patna's Trading Club - Focusing on Stock Trading, Derivative Trading and Market Insights",
+      instagram: 'https://www.instagram.com/tic_iitpatna/',
+      linkedin: 'https://www.linkedin.com/company/ticiitp/',
+    },
+    {
+      name: '⁠⁠⁠ECell',
+      logo: '/images/clublogos/Ecell.jpg',
+      description:
+        'E-Cell IIT Patna is a student organization dedicated to fostering entrepreneurial exploration and innovation. It provides a platform where students can acquire knowledge, develop skills, and pursue independent ventures. The Cell organizes workshops, competitive events, and interactive sessions with established entrepreneurs to offer hands-on exposure. Its flagship event, E-Summit, brings dynamic startup culture to the campus. Additionally, through StartIn, it transforms the campus into a vibrant space for street-style engagement and creative ideation. In essence, E-Cell IIT Patna encourages students to embrace unconventional thinking, take initiative, and embark on their own entrepreneurial journeys.',
+      facebook: 'https://www.facebook.com/ecelliitp',
+      instagram: 'https://www.instagram.com/ecell_iitpatna?igsh=MWtsM215dGVpZGFuNA==',
+      linkedin: 'https://www.linkedin.com/school/ecell-iit-patna/',
+    },
+    {
+      name: 'OptiMatx',
+      logo: '/images/clublogos/optimatx.jpg',
+      description:
+        "Welcome to OptiMatX, the Mathematics and Computing Club of IIT Patna! We are a community of students and faculty who share a passion for Mathematics, Computer Science, and their obvious intersection. Our mission is to foster a collaborative and inclusive environment that supports the growth and development of our members' skills, knowledge, and networks. Whether you are a beginner or an experienced mathematician or computer scientist, our club has something to offer you.",
+      instagram: 'https://www.instagram.com/optimatx.iitp/ ',
+      linkedin: 'https://www.linkedin.com/company/optimatx-iit-patna/',
+    },
   ],
 };
+
 
 /* ================= HOSCA CLUBS ================= */
 

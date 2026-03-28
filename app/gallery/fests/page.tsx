@@ -22,6 +22,7 @@ export default function Page() {
     ...loadFest('Anwesha'),
     ...loadFest('Celesta'),
     ...loadFest('Infinito'),
+    ...loadFest('InvisionX'),
     ...loadFest('TEDx'),
   ];
 
