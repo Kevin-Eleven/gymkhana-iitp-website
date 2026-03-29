@@ -16,20 +16,23 @@ export default function ClubsCarousel({ section }: { section: Section }) {
 
   return (
     <section id={section.id} className="bg-[#f4f7fe] px-6 py-24">
-      <div className="mx-auto max-w-[90rem]">
+      <div className="mx-auto max-w-360">
         <div className="mx-auto max-w-7xl">
-          <h2 className="mb-4 text-center text-3xl font-bold sm:text-4xl">
+          <h2 className="mb-4 text-center text-3xl font-bold sm:text-4xl underline underline-offset-8 decoration-4 decoration-[#435aa8]">
             {section.title}
           </h2>
 
           {section.description && (
             <p className="mx-auto mb-12 max-w-4xl text-center text-gray-700">
               {section.description}
+              <a href={section.link} target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline font-bold">
+               Here
+              </a>
             </p>
           )}
         </div>
 
-        <div className="relative group mx-auto px-16">
+        <div className="relative group mx-auto px-20">
           <Swiper
             className="pb-16"
             modules={[Navigation]}
@@ -53,7 +56,7 @@ export default function ClubsCarousel({ section }: { section: Section }) {
                   whileHover="hover"
                   initial="rest"
                   animate="rest"
-                  className="relative flex h-full min-h-[220px] w-full flex-col items-center justify-center rounded-2xl bg-white p-6 shadow transition hover:shadow-xl overflow-hidden"
+                  className="relative flex h-full min-h-[220px] w-full flex-col items-center justify-center rounded-2xl bg-white p-4 shadow transition hover:shadow-xl overflow-hidden"
                 >
                   <motion.img
                     variants={{
@@ -63,7 +66,7 @@ export default function ClubsCarousel({ section }: { section: Section }) {
                     transition={{ duration: 0.3 }}
                     src={club.logo}
                     alt={club.name}
-                    className="mb-6 h-28 w-28 object-contain"
+                    className="mb-6 h-32 w-32 object-contain"
                   />
                   <motion.span 
                     variants={{
@@ -71,7 +74,7 @@ export default function ClubsCarousel({ section }: { section: Section }) {
                       hover: { opacity: 0 }
                     }}
                     transition={{ duration: 0.3 }}
-                    className="rounded-full border px-6 py-2 text-sm font-medium"
+                    className="rounded-full  px-6 py-2 font-extrabold text-gray-800 tracking-wide uppercase text-2xl"
                   >
                     {club.name}
                   </motion.span>

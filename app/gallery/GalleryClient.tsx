@@ -58,7 +58,7 @@ export default function GalleryClient({ images }: { images: ImageItem[] }) {
         </h1>
 
         {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-8 mb-14 text-sm font-semibold">
+        <div className="flex font flex-wrap justify-center gap-8 mb-14 text-lg font-bold ">
           {categories.map((cat) => (
             <button
               key={cat.value}

@@ -1,7 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { Github, Linkedin, Mail, Code2, Cpu } from 'lucide-react';
 
 interface Dev {
   name: string;
@@ -12,7 +13,6 @@ interface Dev {
   email?: string;
 }
 
-/* Advisory Members */
 const advisory: Dev[] = [
   {
     name: 'Akhand Singh',
@@ -26,11 +26,10 @@ const advisory: Dev[] = [
   },
 ];
 
-/*  Developers */
 const developers: Dev[] = [
   {
     name: 'Abhay Rajput',
-    role: 'Full Stack Developer',
+    role: 'Developer',
     image: '/images/dev/Abhay_Rajput.jpeg',
     github: 'https://github.com/AbhayRajput47/',
     linkedin: 'https://www.linkedin.com/in/abhay-rajput-247a81298/',
@@ -38,166 +37,269 @@ const developers: Dev[] = [
   },
   {
     name: 'Haris Ahmad',
-    role: 'Full Stack Developer',
+    role: 'Developer',
     image: '/images/dev/Haris_Ahmad.jpeg',
     github: 'https://github.com/Kevin-Eleven',
-    linkedin: 'https://www.linkedin.com/in/haris-ahmad-iitp/',
-    email: 'haris_2301ec11@iitp.ac.in',
+
+
   },
 ];
 
-export default function DevelopersClient() {
+
+const CODE_SNIPPETS = [
+  'git commit -m "feat: launch"',
+  'npm run build',
+  'const team = ["Abhay", "Haris"];',
+  '200 OK',
+  'useEffect(() => { ... }, [])',
+  'export default function App()',
+  'tailwind.config.js',
+  'git push origin main',
+  'SELECT * FROM gymkhana;',
+  'docker-compose up',
+];
+
+function FloatingCode() {
   return (
-    <main className="min-h-screen relative overflow-hidden bg-[#020617] text-white pt-24 px-4">
-      {/*  Animated Background */}
-      <motion.div
-        animate={{ x: [0, 100, -100, 0], y: [0, -80, 80, 0] }}
-        transition={{ duration: 20, repeat: Infinity }}
-        className="absolute w-[500px] h-[500px] bg-emerald-500/20 blur-[120px] rounded-full top-[-100px] left-[-100px]"
-      />
-
-      <motion.div
-        animate={{ x: [0, -120, 120, 0], y: [0, 100, -100, 0] }}
-        transition={{ duration: 25, repeat: Infinity }}
-        className="absolute w-[500px] h-[500px] bg-blue-500/20 blur-[120px] rounded-full bottom-[-100px] right-[-100px]"
-      />
-
-      <div className="max-w-7xl mx-auto">
-
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-20"
+    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      {CODE_SNIPPETS.map((snippet, i) => (
+        <motion.span
+          key={i}
+          className="absolute font-mono text-xs text-gray-300 whitespace-nowrap select-none"
+          style={{
+            top: `${8 + (i * 9) % 85}%`,
+            left: `${(i * 13 + 5) % 90}%`,
+          }}
+          animate={{
+            y: [0, -18, 0],
+            opacity: [0.18, 0.38, 0.18],
+          }}
+          transition={{
+            duration: 4 + (i % 4),
+            delay: i * 0.4,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
         >
-          <motion.h1
-            animate={{ backgroundPosition: ['0% 50%', '100% 50%'] }}
-            transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
-            className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-emerald-400 via-blue-500 to-purple-500 bg-[length:200%_200%] text-transparent bg-clip-text"
-          >
-            Team Behind the Project
-          </motion.h1>
+          {snippet}
+        </motion.span>
+      ))}
+    </div>
+  );
+}
 
-          <p className="text-gray-400 mt-4 text-lg">
-            Crafted with passion by IIT Patna students 🚀
-          </p>
-        </motion.div>
+/* ── Typing cursor blink ── */
+function BlinkingCursor() {
+  return (
+    <motion.span
+      animate={{ opacity: [1, 0, 1] }}
+      transition={{ duration: 1, repeat: Infinity }}
+      className="inline-block w-[3px] h-8 bg-emerald-600 ml-1 align-middle"
+    />
+  );
+}
 
-        {/* Advisory Section */}
-        <section className="mb-10">
-          <h2 className="text-3xl font-semibold text-center mb-10">
-            Advisory Team
-          </h2>
+/* ── Card component ── */
+function DevCard({ dev, index, showLinks }: { dev: Dev; index: number; showLinks: boolean }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-60px' });
 
-          <div className="flex justify-center gap-12 flex-wrap">
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.55, delay: index * 0.15, ease: 'easeOut' }}
+      className="group relative w-64"
+    >
+      {/* Hover green border glow */}
+      <div className="absolute -inset-0.5 rounded-2xl bg-linear-to-r from-[#6b7fc6] to-[#2a3f85] opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
 
-            {advisory.map((dev, i) => (
+      <div className="relative bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm group-hover:shadow-lg transition-shadow duration-300">
+        {/* Image */}
+        <div className="overflow-hidden">
+          <motion.img
+            src={dev.image}
+            alt={dev.name}
+            className="w-full h-72 object-cover"
+            whileHover={{ scale: 1.06 }}
+            transition={{ duration: 0.4 }}
+          />
+        </div>
 
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2 }}
-                whileHover={{ rotateY: 10, rotateX: 5, scale: 1.05 }}
-                className="group relative perspective-[1200px]"
-              >
+        {/* Info */}
+        <div className="p-5 text-center">
+          <h3 className="text-base font-bold text-gray-900">{dev.name}</h3>
+          <p className="text-sm text-gray-500 mt-0.5">{dev.role}</p>
 
-                <motion.div
-                  animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="relative rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 overflow-hidden shadow-2xl"
+          {/* Green divider line */}
+          <motion.div
+            className="h-0.5 bg-emerald-500 mx-auto mt-3"
+            initial={{ width: 0 }}
+            animate={inView ? { width: '40%' } : {}}
+            transition={{ duration: 0.5, delay: index * 0.15 + 0.3 }}
+          />
+        </div>
+
+        {/* Hover overlay with links */}
+        {showLinks && (
+          <div className="absolute inset-0 bg-white/95 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-2xl">
+            <div className="flex gap-5">
+              {dev.github && (
+                <motion.a
+                  whileHover={{ scale: 1.2, y: -2 }}
+                  href={dev.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-colors"
                 >
+                  <Github size={18} />
+                </motion.a>
+              )}
+              {dev.linkedin && (
+                <motion.a
+                  whileHover={{ scale: 1.2, y: -2 }}
+                  href={dev.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-colors"
+                >
+                  <Linkedin size={18} />
+                </motion.a>
+              )}
+              {dev.email && (
+                <motion.a
+                  whileHover={{ scale: 1.2, y: -2 }}
+                  href={`mailto:${dev.email}`}
+                  className="p-3 rounded-full border-2 border-gray-400 text-gray-600 hover:bg-gray-600 hover:text-white transition-colors"
+                >
+                  <Mail size={18} />
+                </motion.a>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    </motion.div>
+  );
+}
 
-                  <div className="overflow-hidden">
-                    <motion.img
-                      src={dev.image}
-                      className="w-full h-[320px] object-cover"
-                      whileHover={{ scale: 1.1 }}
-                    />
-                  </div>
+/* ── Section heading (mirrors app style) ── */
+function SectionHeading({ label, icon }: { label: string; icon: React.ReactNode }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
 
-                  <div className="p-6 text-center">
-                    <h2 className="text-xl font-semibold">{dev.name}</h2>
-                    <p className="text-gray-400 text-sm">{dev.role}</p>
-                  </div>
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: -24 }}
+      animate={inView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.5 }}
+      className="mb-10"
+    >
+      <div className="flex items-center gap-2 mb-2">
+        <span className="text-emerald-600">{icon}</span>
+        <h2 className="text-3xl font-bold text-gray-900">{label}</h2>
+      </div>
+      <div className="h-0.5 w-24 bg-gray-300" />
+    </motion.div>
+  );
+}
 
-                </motion.div>
+export default function DevelopersClient() {
+  const [typed, setTyped] = useState('');
+  const fullText = 'Team Behind the Project';
 
-              </motion.div>
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setTyped(fullText.slice(0, i + 1));
+      i++;
+      if (i >= fullText.length) clearInterval(interval);
+    }, 60);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <main className="min-h-screen bg-[#f9f9f9] text-gray-800 pt-24">
+
+      {/* ── Hero banner (matches HeroSection video overlay style) ── */}
+      <section className="relative bg-gray-900 overflow-hidden">
+        {/* Subtle grid */}
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              'linear-gradient(to right, #10b981 1px, transparent 1px), linear-gradient(to bottom, #10b981 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+          }}
+        />
+
+        {/* Floating code snippets */}
+        <FloatingCode />
+
+        {/* Green accent orb */}
+        <motion.div
+          animate={{ scale: [1, 1.15, 1], opacity: [0.15, 0.25, 0.15] }}
+          transition={{ duration: 8, repeat: Infinity }}
+          className="absolute right-[-80px] top-[-80px] w-[360px] h-[360px] rounded-full bg-emerald-500 blur-[100px]"
+        />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            {/* Badge — matches Navbar emerald accent */}
+            <span className="inline-block mb-5 px-4 py-1.5 rounded-full border border-emerald-500/40 text-emerald-400 text-xs font-semibold tracking-widest uppercase bg-emerald-500/10">
+              IIT Patna Gymkhana
+            </span>
+
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight min-h-[1.2em]">
+              {typed}
+              {typed.length < fullText.length && <BlinkingCursor />}
+            </h1>
+
+
+            {/* CTA — same rounded-full border style as HeroSection / AboutSection */}
+            <motion.a
+              href="#developers"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.5, duration: 0.4 }}
+              className="mt-8 inline-block rounded-full border-2 border-white px-8 py-3 text-sm font-medium text-white transition-all duration-300 hover:border-emerald-500 hover:bg-emerald-500 hover:text-white"
+            >
+              Meet the Team
+            </motion.a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Content sections — white/gray like rest of app ── */}
+      <div id="developers" className="max-w-7xl mx-auto px-6 py-20 space-y-20">
+
+        {/* Advisory */}
+        <section>
+          <SectionHeading label="Advisory Team" icon={<Cpu size={22} />} />
+          <div className="flex flex-wrap justify-center gap-10">
+            {advisory.map((dev, i) => (
+              <DevCard key={i} dev={dev} index={i} showLinks={false} />
             ))}
-
           </div>
         </section>
 
-        {/* Developers Section */}
+        {/* Divider */}
+        <div className="h-px bg-gray-200" />
+
+        {/* Developers */}
         <section>
-          <h2 className="text-3xl font-semibold text-center mb-10">
-            Developers
-          </h2>
-
-          <div className="flex justify-center gap-12 flex-wrap">
-
+          <SectionHeading label="Developers" icon={<Code2 size={22} />} />
+          <div className="flex flex-wrap justify-center gap-10">
             {developers.map((dev, i) => (
-
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2 }}
-                whileHover={{ rotateY: 10, rotateX: 5, scale: 1.05 }}
-                className="group relative perspective-[1200px]"
-              >
-
-                <motion.div
-                  animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="relative rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 overflow-hidden shadow-2xl"
-                >
-
-                  <div className="overflow-hidden">
-                    <motion.img
-                      src={dev.image}
-                      className="w-full h-[320px] object-cover"
-                      whileHover={{ scale: 1.1 }}
-                    />
-                  </div>
-
-                  <div className="p-6 text-center">
-                    <h2 className="text-xl font-semibold">{dev.name}</h2>
-                    <p className="text-gray-400 text-sm">{dev.role}</p>
-                  </div>
-
-                  {/* Hover Icons */}
-                  <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <div className="flex gap-6 text-white text-xl">
-
-                      {dev.github && (
-                        <motion.a whileHover={{ scale: 1.3 }} href={dev.github} target="_blank">
-                          <Github />
-                        </motion.a>
-                      )}
-
-                      {dev.linkedin && (
-                        <motion.a whileHover={{ scale: 1.3 }} href={dev.linkedin} target="_blank">
-                          <Linkedin />
-                        </motion.a>
-                      )}
-
-                      {dev.email && (
-                        <motion.a whileHover={{ scale: 1.3 }} href={`mailto:${dev.email}`}>
-                          <Mail />
-                        </motion.a>
-                      )}
-
-                    </div>
-                  </div>
-
-                </motion.div>
-
-              </motion.div>
+              <DevCard key={i} dev={dev} index={i} showLinks={true} />
             ))}
-
           </div>
-          <br />
         </section>
 
       </div>

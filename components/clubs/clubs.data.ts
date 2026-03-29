@@ -11,6 +11,7 @@ export type Club = {
 export type Section = {
   id: string;
   title: string;
+  link?:string;
   description?: string;
   items: Club[];
 };
@@ -28,8 +29,6 @@ export const societies: Section = {
         'Student Technical Council unifies technical clubs, research activities, and projects, fostering collaboration and innovation among students.',
       facebook: 'https://www.facebook.com/stc.iitp/',
       instagram: 'https://www.instagram.com/iitpatna_stc',
-      facebook: 'https://www.facebook.com/stc.iitp/',
-      instagram: 'https://www.instagram.com/stc.iitp/'
     },
     {
       name: 'HOSCA',
@@ -72,7 +71,8 @@ export const stcClubs: Section = {
   id: 'stc',
   title: 'STC Clubs',
   description:
-    'Unleashing a tech-driven revolution, where diverse clubs converge,    pioneering minds ignite, and innovative ideas come to life.<br>A symphony of inter-disciplinary projects,competitions& research propels budding engineers to new frontiers & shaping the future <br>of technology and spark groundbreaking innovations.For more details',
+    'Unleashing a tech-driven revolution, where diverse clubs converge,    pioneering minds ignite, and innovative ideas come to life.A symphony of inter-disciplinary projects,competitions & research propels budding engineers to new frontiers & shaping the future of technology and spark groundbreaking innovations. For more details, Visit ',
+  link: 'https://drive.google.com/file/d/128dQT1N_URNeYr4zo6f72VthmiS3oWiA/view',
   items: [
     {
       name: 'ACE',
@@ -82,9 +82,7 @@ export const stcClubs: Section = {
       facebook: 'https://www.facebook.com/ACE.IITP',
       instagram: 'https://www.instagram.com/ace_iitp',
       linkedin: 'https://www.linkedin.com/company/ace-iit-patna',
-      facebook: 'https://www.facebook.com/ACE.IITP',
-      linkedin: 'https://www.linkedin.com/company/ace-iit-patna',
-      instagram: 'https://www.instagram.com/ace_iitp'
+
     },
     {
       name: 'NJACK',
@@ -94,9 +92,7 @@ export const stcClubs: Section = {
       facebook: 'https://www.facebook.com/njack.iitp',
       instagram: 'https://www.instagram.com/njackiitp/',
       linkedin: 'https://in.linkedin.com/company/njack-iit-patna',
-      facebook: 'https://www.facebook.com/njack.iitp',
-      linkedin: 'https://in.linkedin.com/company/njack-iit-patna',
-      instagram: 'https://www.instagram.com/njackiitp/'
+
     },
     {
       name: 'AP Club',
@@ -106,9 +102,6 @@ export const stcClubs: Section = {
       facebook: 'https://www.facebook.com/apclub.iitp',
       instagram: 'https://www.instagram.com/apclub.iitp/',
       linkedin: 'https://www.linkedin.com/company/ap-club-iitp',
-      facebook: 'https://www.facebook.com/apclub.iitp',
-      linkedin: 'https://www.linkedin.com/company/ap-club-iitp',
-      instagram: 'https://www.instagram.com/apclub.iitp/'
     },
     {
       name: 'SCME',
@@ -117,9 +110,9 @@ export const stcClubs: Section = {
         'SCME was founded with the motive of engaging and encouraging Mechanical Engineering discipline related activities in IIT Patna. Since its inception, SCME has been conducting events, lectures and workshops round the year for the benefit of mechanical engineering students.',
       facebook: 'https://www.facebook.com/SCMEIITP/',
       instagram: 'https://www.instagram.com/scme_iitp/',
-      facebook: 'https://www.facebook.com/SCMEIITP/',
+
       youtube: 'https://www.youtube.com/channel/UCYzJrjjdxZ68DXrmY1RP0hg',
-      instagram: 'https://www.instagram.com/scme_iitp/'
+ 
     },
     {
       name: 'MATES',
@@ -130,9 +123,7 @@ export const stcClubs: Section = {
       instagram: 'https://instagram.com/mates__iitp',
       linkedin:
         'https://www.linkedin.com/company/mates-materials-engineering-society-iit-patna',
-      facebook: 'https://www.facebook.com/MatES.IITP/',
-      linkedin: 'https://www.linkedin.com/company/mates-materials-engineering-society-iit-patna',
-      instagram: 'https://instagram.com/mates__iitp?utm_medium=copy_link'
+
     },
     {
       name: 'ChESSx',
@@ -141,9 +132,9 @@ export const stcClubs: Section = {
         'ChESSx stands for Chemical Engineering Students’ Society, IIT Patna . It aims to foster academic excellence, technical curiosity, and professional development among students through workshops, seminars, industry interactions, competitions, and collaborative projects. ChESSx also serves as a platform for students to connect with faculty, alumni, and industry experts while promoting innovation and learning in the field of chemical engineering.',
       facebook: 'https://www.facebook.com/chemicaliitp/',
       instagram: 'https://instagram.com/chessx_iitp',
-      facebook: 'https://www.facebook.com/chemicaliitp/',
+
       linkedin: 'https://www.linkedin.com/in/chemical-engineering-students-society-chessx-iit-patna-874725219',
-      instagram: 'https://instagram.com/chessx_iitp?utm_medium=copy_link'
+
     },
     {
       name: 'Sparkonics',
@@ -153,9 +144,7 @@ export const stcClubs: Section = {
       facebook: 'https://www.facebook.com/sparkonics',
       instagram: 'https://www.instagram.com/sparkonics.iitp/',
       linkedin: 'https://in.linkedin.com/company/sparkonics',
-      facebook: 'https://www.facebook.com/sparkonics',
-      linkedin: 'https://in.linkedin.com/company/sparkonics',
-      instagram: 'https://www.instagram.com/sparkonics.iitp/'
+
     },
     {
       name: 'Phoenix (Robocon)',
@@ -164,8 +153,7 @@ export const stcClubs: Section = {
         'Team Phoenix is the official robotics team of Indian Institute of Technology Patna (IIT Patna), dedicated to designing, building, and advancing innovative robotic systems. The team provides a collaborative platform for students to work on cutting-edge technologies in robotics, automation, and intelligent systems while gaining strong practical and research-oriented experience.  The team actively participates in prestigious national and international robotics competitions such as ABU Robocon, Indian Robotics Competition (I‑RoC), and e-Yantra Robotics Competition, along with various other robotics events and technical challenges. Through these competitions, members apply engineering principles to solve complex real-world problems and showcase technological innovation.  Team Phoenix works across multiple domains including CAD design, hardware prototyping, electronics, embedded systems, ROS, software development, and machine learning. By fostering teamwork, creativity, and technical excellence, the club aims to promote robotics culture at IIT Patna and represent the institute on leading robotics platforms.',
       facebook: 'https://www.facebook.com/teamphoenixiitp/',
       instagram: 'https://www.instagram.com/teamphoenix.iitp',
-      facebook: 'https://www.facebook.com/teamphoenixiitp/',
-      instagram: 'https://instagram.com/robocon.iitp'
+
     },
     {
       name: "Tinkerer's",
@@ -175,9 +163,7 @@ export const stcClubs: Section = {
       facebook: 'https://www.facebook.com/TInkerersLabIITP/',
       instagram: 'https://instagram.com/tinkerers_lab_iitp',
       linkedin: 'https://www.linkedin.com/company/tinkerers-lab-iitp',
-      facebook: 'https://www.facebook.com/TInkerersLabIITP/',
-      linkedin: 'https://www.linkedin.com/company/tinkerers-lab-iitp',
-      instagram: 'https://instagram.com/tinkerers_lab_iitp?utm_medium=copy_link'
+
     },
     {
       name: 'MoodBoard',
@@ -185,7 +171,7 @@ export const stcClubs: Section = {
       description:
         'The Moodboard Design Club of Indian Institute of Technology Patna is a student-led creative community focused on design, visual storytelling, and digital creativity. The club brings together students interested in areas like graphic design, UI/UX, branding, illustration',
       instagram: 'https://instagram.com/designclub.iitp',
-      instagram: 'https://instagram.com/designclub.iitp?igshid=MzRlODBiNWFlZA=='
+      
     },
     {
       name: 'RNA Club',
@@ -201,8 +187,7 @@ export const stcClubs: Section = {
         'The Finance Club, IIT Patna aims to promote interest and understanding of finance, investment, and financial markets among students. It organizes workshops, competitions, and discussions to develop practical financial and analytical skills.',
       instagram: 'https://www.instagram.com/financeclub.iitp/',
       linkedin: 'https://www.linkedin.com/company/finance-club-iit-patna',
-      linkedin: 'https://www.linkedin.com/company/finance-club-iit-patna',
-      instagram: 'https://www.instagram.com/financeclub.iitp/'
+
     },
     {
       name: 'QTC',
@@ -212,7 +197,7 @@ export const stcClubs: Section = {
       instagram: 'https://www.instagram.com/qtc.iitp?igsh=MXNmOWVxNjhncXZzbw==',
     },
     {
-      name: '⁠DWDG',
+      name:'DWDG',
       logo: '/images/clublogos/DWDG.jpg',
       description:
         " DWDG is an international student network and think tank, connecting over 1,000 members across 40+ campuses in 15 countries. The Future Leaders Program, developed by Do Well Do Good, is a 22-week curriculum. Students go through intensive training, assignments,project-based learning, and research to develop and enhance their do well do good leadership and application skills.",
@@ -254,7 +239,8 @@ export const hoscaClubs: Section = {
   id: 'hosca',
   title: 'HOSCA Clubs',
   description:
-    'HoSCA promotes a diverse and engaging campus experience through cultural events that unite people from different backgrounds. The club organizes activities that foster lifelong learning, community interaction, and showcase the talent of student managers.',
+    'HoSCA promotes a diverse and engaging campus experience through cultural events that unite people from different backgrounds. The club organizes activities that foster lifelong learning, community interaction, and showcase the talent of student managers.For more details, Visit ',
+  link: 'https://drive.google.com/file/d/1mgy02PG8SEqEWPbyXfpR90wMvAbBpi7I/view?usp=sharing',
   items: [
     {
       name: 'HOOT',
@@ -264,7 +250,7 @@ export const hoscaClubs: Section = {
       instagram: 'https://instagram.com/hoot.iitp',
       facebook: 'https://instagram.com/hoot.iitp?igshid=MzRlODBiNWFlZA==',
       linkedin: 'https://instagram.com/hoot.iitp?igshid=MzRlODBiNWFlZA==',
-      instagram: 'https://instagram.com/hoot.iitp?igshid=MzRlODBiNWFlZA=='
+   
     },
     {
       name: 'Yavanika',
@@ -274,7 +260,7 @@ export const hoscaClubs: Section = {
       instagram: 'https://instagram.com/yavanika_iitp',
       facebook: 'https://instagram.com/yavanika_iitp?igshid=MzRlODBiNWFlZA==yavanika',
       linkedin: 'https://instagram.com/yavanika_iitp?igshid=MzRlODBiNWFlZA==yavanika',
-      instagram: 'https://instagram.com/yavanika_iitp?igshid=MzRlODBiNWFlZA==yavanika'
+     
     },
     {
       name: 'Quiz Club',
@@ -284,7 +270,7 @@ export const hoscaClubs: Section = {
       instagram: 'https://instagram.com/qc_iitp',
       facebook: 'https://instagram.com/qc_iitp?igshid=MzRlODBiNWFlZA==',
       linkedin: 'https://instagram.com/qc_iitp?igshid=MzRlODBiNWFlZA==',
-      instagram: 'https://instagram.com/qc_iitp?igshid=MzRlODBiNWFlZA=='
+
     },
     {
       name: 'Syahi',
@@ -294,7 +280,7 @@ export const hoscaClubs: Section = {
       instagram: 'https://instagram.com/syahi.iitp',
       facebook: 'https://instagram.com/syahi.iitp?igshid=MzRlODBiNWFlZA==',
       linkedin: 'https://instagram.com/syahi.iitp?igshid=MzRlODBiNWFlZA==',
-      instagram: 'https://instagram.com/syahi.iitp?igshid=MzRlODBiNWFlZA=='
+    
     },
     {
       name: 'Pixxel',
@@ -304,7 +290,7 @@ export const hoscaClubs: Section = {
       instagram: 'https://instagram.com/pixxel_iitp',
       facebook: 'https://instagram.com/pixxel_iitp?igshid=MzRlODBiNWFlZA==',
       linkedin: 'https://instagram.com/pixxel_iitp?igshid=MzRlODBiNWFlZA==',
-      instagram: 'https://instagram.com/pixxel_iitp?igshid=MzRlODBiNWFlZA=='
+
     },
     {
       name: 'Anime Club',
@@ -314,7 +300,7 @@ export const hoscaClubs: Section = {
       instagram: 'https://instagram.com/animeclub_iitp',
       facebook: 'https://instagram.com/animeclub_iitp?igshid=MzRlODBiNWFlZA==',
       linkedin: 'https://instagram.com/animeclub_iitp?igshid=MzRlODBiNWFlZA==',
-      instagram: 'https://instagram.com/animeclub_iitp?igshid=MzRlODBiNWFlZA=='
+     
     },
     {
       name: 'Vincetroke',
@@ -324,7 +310,7 @@ export const hoscaClubs: Section = {
       instagram: 'https://instagram.com/vincetroke.iitp',
       facebook: 'https://instagram.com/vincetroke.iitp?igshid=MzRlODBiNWFlZA==',
       linkedin: 'https://instagram.com/vincetroke.iitp?igshid=MzRlODBiNWFlZA==',
-      instagram: 'https://instagram.com/vincetroke.iitp?igshid=MzRlODBiNWFlZA=='
+     
     },
     {
       name: 'Aria',
@@ -334,7 +320,6 @@ export const hoscaClubs: Section = {
       instagram: 'https://instagram.com/aria_iitp',
       facebook: 'https://instagram.com/aria_iitp?igshid=MzRlODBiNWFlZA==',
       linkedin: 'https://instagram.com/aria_iitp?igshid=MzRlODBiNWFlZA==',
-      instagram: 'https://instagram.com/aria_iitp?igshid=MzRlODBiNWFlZA=='
     },
     {
       name: 'Exousia',
@@ -344,7 +329,7 @@ export const hoscaClubs: Section = {
       instagram: 'https://instagram.com/exousia_iitp',
       facebook: 'https://instagram.com/exousia_iitp?igshid=MzRlODBiNWFlZA==',
       linkedin: 'https://instagram.com/exousia_iitp?igshid=MzRlODBiNWFlZA==',
-      instagram: 'https://instagram.com/exousia_iitp?igshid=MzRlODBiNWFlZA=='
+     
     },
     {
       name: 'Hexachrome',
