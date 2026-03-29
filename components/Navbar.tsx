@@ -50,7 +50,7 @@ export default function Navbar() {
     { href: '/gallery', label: 'GALLERY' },
     { href: '/faq', label: 'FAQ' },
     { href: '/office-bearers', label: 'OFFICE BEARERS' },
-    { href: '/open-house', label: 'OPEN HOUSE' },
+    // { href: '/open-house', label: 'OPEN HOUSE' },
   ];
 
   const isActive = (href: string) => {
