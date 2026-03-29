@@ -14,7 +14,7 @@ type Category =
   | 'hosca'
   | 'fests'; 
 
-type ImageItem = {
+export type ImageItem = {
   src: string;
   category: Exclude<Category, 'all' | 'fests'>;
 };
@@ -34,6 +34,7 @@ export default function GalleryClient({ images }: { images: ImageItem[] }) {
 
   const router = useRouter();
   const [activeCategory, setActiveCategory] = useState<Category>('all');
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const filteredImages =
     activeCategory === 'all'
@@ -49,7 +50,7 @@ export default function GalleryClient({ images }: { images: ImageItem[] }) {
   };
 
   return (
-    <main className="min-h-screen bg-[#f4f7fe] pt-24 px-4">
+    <main className="min-h-screen bg-[#f4f7fe] pt-24  px-4 pb-12">
       <div className="max-w-6xl mx-auto">
 
         <h1 className="text-4xl font-bold text-center text-black mb-12">
@@ -57,7 +58,7 @@ export default function GalleryClient({ images }: { images: ImageItem[] }) {
         </h1>
 
         {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-8 mb-14 text-sm font-semibold">
+        <div className="flex font flex-wrap justify-center gap-8 mb-14 text-lg font-bold ">
           {categories.map((cat) => (
             <button
               key={cat.value}
@@ -95,13 +96,45 @@ export default function GalleryClient({ images }: { images: ImageItem[] }) {
                 <motion.img
                   src={img.src}
                   alt=""
-                  className="w-full h-[250px] object-cover"
+                  className="w-full h-[250px] object-cover cursor-pointer"
                   whileHover={{ scale: 1.05 }}
+                  onClick={() => setSelectedImage(img.src)}
                 />
               </motion.div>
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* Lightbox Modal */}
+        <AnimatePresence>
+          {selectedImage && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 px-4"
+              onClick={() => setSelectedImage(null)}
+            >
+              <div className="relative max-w-5xl w-full flex items-center justify-center">
+                <button
+                  className="absolute -top-12 right-0 md:-right-12 text-white hover:text-gray-300 z-[101]"
+                  onClick={() => setSelectedImage(null)}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+                <motion.img
+                  initial={{ scale: 0.9 }}
+                  animate={{ scale: 1 }}
+                  exit={{ scale: 0.9 }}
+                  src={selectedImage}
+                  alt="Enlarged gallery view"
+                  className="max-h-[85vh] w-auto rounded-lg shadow-2xl object-contain relative z-[101]"
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
       </div>
     </main>

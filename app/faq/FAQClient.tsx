@@ -397,7 +397,7 @@ export default function FAQClient() {
     faqData.find((cat) => cat.id === activeTab) || faqData[0];
 
   return (
-    <main className="min-h-screen bg-[#f4f7fe] pt-24 px-4">
+    <main className="min-h-screen bg-[#f4f7fe] pt-24 px-4 pb-12">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl text-black font-bold text-center mb-12">
           FAQ

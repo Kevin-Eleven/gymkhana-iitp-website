@@ -13,6 +13,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
   title: "IIT Patna Gymkhana | Students' Council",
   description: "Official website of IIT Patna Gymkhana - The governing council of students working for the over-all well being and holistic development of students.",
   keywords: "IITP, Gymkhana, IIT Patna, Student Council, Technical Clubs, Cultural Events",

@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-import GalleryClient from './GalleryClient';
+import GalleryClient, { ImageItem } from './GalleryClient';
 
-function loadImages(folder: string, category: string) {
+function loadImages(folder: string, category: ImageItem['category']): ImageItem[] {
   const folderPath = path.join(process.cwd(), 'public/images/portfolio', folder);
 
   if (!fs.existsSync(folderPath)) return [];

@@ -5,20 +5,42 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
+
+      if (pathname === '/') {
+        const sections = ['events', 'clubs', 'about'];
+        let current = '';
+        for (const section of sections) {
+          const el = document.getElementById(section);
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top <= 150) { // Offset for navbar
+              current = section;
+              break;
+            }
+          }
+        }
+        if (!current && window.scrollY < 100) {
+          current = ''; // Top of page
+        }
+        setActiveSection(current);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initially
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
   const navLinks = [
     { href: '/', label: 'HOME' },
@@ -32,7 +54,11 @@ export default function Navbar() {
   ];
 
   const isActive = (href: string) => {
-    if (href === '/') return pathname === '/';
+    if (href === '/') return pathname === '/' && activeSection === '';
+    if (href.startsWith('/#')) {
+      const section = href.substring(2);
+      return pathname === '/' && activeSection === section;
+    }
     return pathname.startsWith(href);
   };
 
@@ -60,18 +86,29 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <nav className="hidden md:flex">
             <ul className="flex items-center gap-8">
-              {navLinks.map((link) => (
-                <li
-                  key={link.href}
-                  className={`text-sm font-semibold transition-colors ${
-                    isActive(link.href)
-                      ? 'text-blue-600'
-                      : 'text-gray-800 hover:text-blue-600'
-                  }`}
-                >
-                  <Link href={link.href}>{link.label}</Link>
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const active = isActive(link.href);
+                return (
+                  <li
+                    key={link.href}
+                    className="relative group"
+                  >
+                    <Link
+                      href={link.href}
+                      className={`text-sm font-semibold transition-colors
+                        ${active ? 'text-emerald-600' : 'text-gray-800 hover:text-emerald-600'}
+                      `}
+                    >
+                      {link.label}
+                    </Link>
+                    <span 
+                      className={`absolute left-0 -bottom-2 h-[2px] bg-emerald-600 transition-all duration-300
+                        ${active ? 'w-full' : 'w-0 group-hover:w-full'}
+                      `}
+                    />
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 
@@ -87,46 +124,55 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-     {/* Mobile Menu */}
-<div
-  className={`md:hidden overflow-hidden transition-all duration-300 ${
-    isMenuOpen ? 'max-h-screen border-t border-gray-300' : 'max-h-0'
-  }`}
->
-  <nav className="bg-gray-200">
-    <ul className="flex flex-col">
-      {navLinks.map((link) => {
-        const active = isActive(link.href);
-
-        return (
-          <li
-            key={link.href}
-            className={`relative border-b border-gray-400`}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="md:hidden overflow-hidden border-t border-gray-300 bg-gray-200"
           >
-            <Link
-              href={link.href}
-              onClick={() => setIsMenuOpen(false)}
-              className={`block px-6 py-5 text-sm font-semibold tracking-wide
-                ${active ? 'text-emerald-600' : 'text-black'}
-                hover:text-emerald-600
-              `}
-            >
-              {link.label}
+            <nav>
+              <ul className="flex flex-col">
+                {navLinks.map((link, index) => {
+                  const active = isActive(link.href);
 
-              {/* Green bar (hover + active) */}
-              <span
-                className={`absolute left-0 bottom-0 h-2 w-full bg-emerald-600
-                  transform origin-left transition-transform duration-300
-                  ${active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}
-                `}
-              />
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
-  </nav>
-</div>
+                  return (
+                    <motion.li
+                      key={link.href}
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: -20, opacity: 0 }}
+                      transition={{ duration: 0.2, delay: index * 0.05 }}
+                      className="relative border-b border-gray-300"
+                    >
+                      <Link
+                        href={link.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className={`block px-6 py-5 text-sm font-semibold tracking-wide
+                          ${active ? 'text-emerald-600' : 'text-gray-800'}
+                          hover:text-emerald-600 hover:bg-gray-100 transition-colors
+                        `}
+                      >
+                        {link.label}
+
+                        {/* Green bar (hover + active) */}
+                        <span
+                          className={`absolute left-0 bottom-0 h-1 w-full bg-emerald-600
+                            transform origin-left transition-transform duration-300
+                            ${active ? 'scale-x-100' : 'scale-x-0'}
+                          `}
+                        />
+                      </Link>
+                    </motion.li>
+                  );
+                })}
+              </ul>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </header>
   );
