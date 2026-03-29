@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, Linkedin, ChevronLeft, ChevronRight, Youtube } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, ChevronLeft, ChevronRight, Youtube,Globe } from 'lucide-react';
 import ClubModal from './ClubModal';
 import { Section, Club } from './clubs.data';
 
@@ -106,6 +106,11 @@ export default function ClubsCarousel({ section }: { section: Section }) {
                     {club.youtube && club.youtube !== '#' && (
                       <a href={club.youtube} target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-red-600 transition-colors" onClick={(e) => e.stopPropagation()}>
                         <Youtube />
+                      </a>
+                    )}
+                    {club.website && club.website !== '#' && (
+                      <a href={club.website} target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-blue-500 transition-colors" onClick={(e) => e.stopPropagation()}>
+                        <Globe />
                       </a>
                     )}
                   </motion.div>

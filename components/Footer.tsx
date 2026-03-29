@@ -36,6 +36,8 @@ export default function Footer() {
               <li><a href="https://www1.iitp.ac.in/services-&-amenities/medical-unit">Medical Unit</a></li>
               <li><a href="https://ccdc.iitp.ac.in/">CCDC(TPC)</a></li>
               <li><a href="https://www1.iitp.ac.in/index.php/students/student-activity-center">SAC</a></li>
+              <li><a href="https://stc.iitp.ac.in/">STC</a></li>
+              <li><a href="https://acc.iitp.ac.in/">ACC</a></li>
             
             </ul>
           </div>

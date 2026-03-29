@@ -6,6 +6,7 @@ export type Club = {
   instagram?: string;
   linkedin?: string;
   youtube?: string;
+  website?: string;
 };
 
 export type Section = {
@@ -29,6 +30,7 @@ export const societies: Section = {
         'Student Technical Council unifies technical clubs, research activities, and projects, fostering collaboration and innovation among students.',
       facebook: 'https://www.facebook.com/stc.iitp/',
       instagram: 'https://www.instagram.com/iitpatna_stc',
+      website: 'https://stc.iitp.ac.in/',
     },
     {
       name: 'HOSCA',
@@ -49,6 +51,7 @@ export const societies: Section = {
       logo: './images/acc_1.png',
       description:
         'The Academics Council at IIT Patna is the intellectual hub where knowledge thrives. We strive to create a conducive environment for academic excellence, fostering curiosity, critical thinking, and innovation. Join us on a journey of intellectual growth and endless possibilities.',
+      website: 'https://acc.iitp.ac.in/'
     },
     {
       name: 'SWB',
