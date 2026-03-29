@@ -212,20 +212,32 @@ function PersonCard({ person }: { person: Person }) {
       animate="rest"
       className="relative bg-white rounded-2xl shadow-md w-[260px] overflow-hidden group"
     >
-      <img
+      <motion.img
+        variants={{
+          rest: { scale: 1 },
+          hover: { scale: 0.85 },
+        }}
+        transition={{ duration: 0.3 }}
         src={person.image}
         alt={person.name}
         className="w-full h-[260px] object-cover object-top"
       />
 
-      <div className="p-5 text-center">
+      <motion.div 
+        variants={{
+          rest: { opacity: 1 },
+          hover: { opacity: 0 },
+        }}
+        transition={{ duration: 0.3 }}
+        className="p-5 text-center"
+      >
         <h3 className="font-semibold text-gray-900">
           {person.name}
         </h3>
         <p className="text-sm text-gray-500">
           {person.role}
         </p>
-      </div>
+      </motion.div>
 
       {/* Hover icons */}
       <motion.div
@@ -234,7 +246,7 @@ function PersonCard({ person }: { person: Person }) {
           hover: { opacity: 1, y: 0 },
         }}
         transition={{ duration: 0.3 }}
-        className="absolute inset-0 bg-white/90 flex items-end justify-center pb-6"
+        className="absolute inset-0 bg-white/90 flex items-center justify-center"
       >
         <motion.div
           initial="rest"

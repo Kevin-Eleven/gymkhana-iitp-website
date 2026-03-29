@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { motion } from 'framer-motion';
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
 import ClubModal from './ClubModal';
 import { Section, Club } from './clubs.data';
 
@@ -27,6 +29,7 @@ export default function ClubsCarousel({ section }: { section: Section }) {
         )}
 
         <Swiper
+          className="pb-16"
           modules={[Navigation, Pagination]}
           spaceBetween={24}
           navigation
@@ -40,19 +43,48 @@ export default function ClubsCarousel({ section }: { section: Section }) {
         >
           {section.items.map((club) => (
             <SwiperSlide key={club.name}>
-              <button
+              <motion.button
                 onClick={() => setActive(club)}
-                className="group flex h-full w-full flex-col items-center rounded-2xl bg-white p-6 shadow transition hover:-translate-y-1 hover:shadow-xl"
+                whileHover="hover"
+                initial="rest"
+                animate="rest"
+                className="relative flex h-full min-h-[220px] w-full flex-col items-center justify-center rounded-2xl bg-white p-6 shadow transition hover:shadow-xl overflow-hidden"
               >
-                <img
+                <motion.img
+                  variants={{
+                    rest: { scale: 1 },
+                    hover: { scale: 0.9 }
+                  }}
+                  transition={{ duration: 0.3 }}
                   src={club.logo}
                   alt={club.name}
                   className="mb-6 h-28 w-28 object-contain"
                 />
-                <span className="rounded-full border px-6 py-2 text-sm font-medium group-hover:bg-green-600 group-hover:text-white">
+                <motion.span 
+                  variants={{
+                    rest: { opacity: 1 },
+                    hover: { opacity: 0 }
+                  }}
+                  transition={{ duration: 0.3 }}
+                  className="rounded-full border px-6 py-2 text-sm font-medium"
+                >
                   {club.name}
-                </span>
-              </button>
+                </motion.span>
+                
+                {/* Social Links Overlay */}
+                <motion.div
+                  variants={{
+                    rest: { opacity: 0, y: 10 },
+                    hover: { opacity: 1, y: 0 }
+                  }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute inset-0 flex items-center justify-center gap-4 bg-white/80"
+                >
+                  {club.facebook && <Facebook className="text-gray-800" />}
+                  {club.instagram && <Instagram className="text-gray-800" />}
+                  {club.linkedin && <Linkedin className="text-gray-800" />}
+                </motion.div>
+              </motion.button>
             </SwiperSlide>
           ))}
         </Swiper>

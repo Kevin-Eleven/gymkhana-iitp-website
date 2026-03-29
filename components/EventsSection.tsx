@@ -1,6 +1,8 @@
-'use client';
+"use client";
 
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from "lucide-react";
+import FestsCarousel3D from "./events/FestsCarousel3D";
+import FestsCarouselMobile from "./events/FestsCarouselMobile";
 
 export default function EventsSection() {
   return (
@@ -19,12 +21,12 @@ export default function EventsSection() {
 
             {/* Description */}
             <p className="text-base leading-relaxed text-gray-700 sm:text-lg">
-              Immerse yourself in the vibrant event culture of IIT Patna.
-              From large-scale cultural and technical fests to creative
-              showcases and student-led initiatives, these events bring
-              together talent, collaboration, and unforgettable experiences.
-              Discover exhibitions, connect with like-minded individuals, and
-              explore creativity through competitions, workshops, and talks.
+              Immerse yourself in the vibrant event culture of IIT Patna. From
+              large-scale cultural and technical fests to creative showcases and
+              student-led initiatives, these events bring together talent,
+              collaboration, and unforgettable experiences. Discover
+              exhibitions, connect with like-minded individuals, and explore
+              creativity through competitions, workshops, and talks.
             </p>
 
             {/* CTA */}
@@ -45,16 +47,14 @@ export default function EventsSection() {
       </section>
 
       {/* Fest Gallery */}
-      <section
-        id="festgallery"
-        className="bg-gray-50 px-4 pb-24 pt-12"
-      >
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl shadow-lg">
-          <iframe
-            src="/gallery/Fests/index.html"
-            title="Gallery - Gymkhana IIT Patna"
-            className="h-[580px] w-full border-none"
-          />
+      <section id="festgallery" className="bg-gray-50 px-4 pb-24 pt-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="hidden sm:block">
+            <FestsCarousel3D />
+          </div>
+          <div className="block sm:hidden">
+            <FestsCarouselMobile />
+          </div>
         </div>
       </section>
     </>

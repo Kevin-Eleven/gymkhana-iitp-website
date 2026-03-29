@@ -9,16 +9,37 @@ import { Menu, X } from 'lucide-react';
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
+
+      if (pathname === '/') {
+        const sections = ['events', 'clubs', 'about'];
+        let current = '';
+        for (const section of sections) {
+          const el = document.getElementById(section);
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top <= 150) { // Offset for navbar
+              current = section;
+              break;
+            }
+          }
+        }
+        if (!current && window.scrollY < 100) {
+          current = ''; // Top of page
+        }
+        setActiveSection(current);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initially
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
   const navLinks = [
     { href: '/', label: 'HOME' },
@@ -32,7 +53,11 @@ export default function Navbar() {
   ];
 
   const isActive = (href: string) => {
-    if (href === '/') return pathname === '/';
+    if (href === '/') return pathname === '/' && activeSection === '';
+    if (href.startsWith('/#')) {
+      const section = href.substring(2);
+      return pathname === '/' && activeSection === section;
+    }
     return pathname.startsWith(href);
   };
 
