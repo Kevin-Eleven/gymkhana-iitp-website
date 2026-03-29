@@ -83,6 +83,14 @@ export default function Footer() {
             <a href="https://twitter.com/stc_iitp" aria-label="Twitter">
               <Twitter className="hover:text-emerald-400 transition" />
             </a>
+            <a href="/developers" aria-label="Developers">
+              {/* <img
+                src="/images/dev.png"
+                alt="Developers"
+                className="w-6 h-6 hover:scale-110 hover:opacity-80 transition"
+              /> */}
+              Developers
+            </a>
           </div>
         </div>
       </div>
@@ -94,7 +102,7 @@ export default function Footer() {
             © Students&apos; Gymkhana, IIT Patna.
           </span>
           <span className="text-gray-300">
-            Developed by NJACK and MoodBoard
+            Developed by STC
           </span>
         </div>
       </div>

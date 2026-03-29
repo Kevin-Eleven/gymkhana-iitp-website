@@ -38,7 +38,7 @@ export default function AboutSection() {
             To make learning enjoyable, the Gymkhana organizes workshops,
             seminars, and technical activities. Clubs and groups come together
             to host major fests such as <strong>ANWESHA</strong>,{' '}
-            <strong>INFINITO</strong>, <strong>CELESTA</strong>, and{' '}
+            <strong>INFINITO</strong>, <strong>CELESTA</strong>, <strong>INVISIONX</strong>, and{' '}
             <strong>REVERBERANCE</strong>, which stand as a testament to student
             creativity and talent.
             <br />

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-type Category = 'all' | 'anwesha' | 'celesta' | 'infinito' | 'tedx';
+type Category = 'all' | 'anwesha' | 'celesta' | 'infinito' | 'invisionX' | 'tedx';
 
 type ImageItem = {
   src: string;
@@ -15,6 +15,7 @@ const categories = [
   { label: 'Anwesha', value: 'anwesha' },
   { label: 'Celesta', value: 'celesta' },
   { label: 'Infinito', value: 'infinito' },
+  { label: 'InvisionX', value: 'invisionx' },
   { label: 'TEDx', value: 'tedx' },
 ];
 
