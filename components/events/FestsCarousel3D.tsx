@@ -104,10 +104,30 @@ function getFrontIndex(rotation: number) {
   return Math.round(normalized / ANGLE_STEP) % FEST_DATA.length;
 }
 
+// Card dimensions keyed to the same breakpoints as radius
+type CardSize = { w: number; h: number };
+
+function getCardSize(width: number): CardSize {
+  if (width < 400) return { w: 120, h: 180 };
+  if (width < 640) return { w: 150, h: 220 };
+  if (width < 900) return { w: 180, h: 260 };
+  if (width < 1280) return { w: 210, h: 300 };
+  return { w: 240, h: 340 };
+}
+
+function getRadius(width: number): number {
+  if (width < 400) return 160;
+  if (width < 640) return 220;
+  if (width < 900) return 320;
+  if (width < 1280) return 430;
+  return 540;
+}
+
 type FestCardProps = {
   item: FestCardData;
   index: number;
   radius: number;
+  cardSize: CardSize;
   rotation: ReturnType<typeof useMotionValue<number>>;
   clock: ReturnType<typeof useMotionValue<number>>;
   isFront: boolean;
@@ -117,6 +137,7 @@ function FestCard({
   item,
   index,
   radius,
+  cardSize,
   rotation,
   clock,
   isFront,
@@ -126,8 +147,8 @@ function FestCard({
     const theta = index * ANGLE_STEP + r;
     const rad = (theta * Math.PI) / 180;
     const depth = Math.cos(rad);
-    const floatY = Math.sin(t / 700 + index * 0.68) * 12;
-    const floatX = Math.cos(t / 1100 + index * 0.49) * 5;
+    const floatY = Math.sin(t / 700 + index * 0.68) * 8;
+    const floatX = Math.cos(t / 1100 + index * 0.49) * 4;
     const scale = 0.65 + ((depth + 1) / 2) * 0.35;
 
     return `translate3d(-50%, -50%, 0px) rotateY(${theta}deg) translateZ(${radius}px) translateX(${floatX}px) translateY(${floatY}px) scale(${scale})`;
@@ -148,30 +169,44 @@ function FestCard({
   return (
     <motion.article
       suppressHydrationWarning
-      className={`absolute left-1/2 top-1/2 h-[320px] w-[220px] sm:h-[380px] sm:w-[280px] overflow-hidden rounded-3xl border border-cyan-100/30 bg-slate-950/85 shadow-[0_24px_60px_rgba(0,0,0,0.45)] backdrop-blur-sm transition-shadow duration-300 ${
+      className={`absolute left-1/2 top-1/2 overflow-hidden rounded-2xl border border-cyan-100/30 bg-slate-950/85 shadow-[0_16px_40px_rgba(0,0,0,0.45)] backdrop-blur-sm transition-shadow duration-300 ${
         isFront
-          ? "ring-1 ring-cyan-200/80 shadow-[0_30px_70px_rgba(0,0,0,0.55),0_0_24px_rgba(34,211,238,0.32)]"
+          ? "ring-1 ring-cyan-200/80 shadow-[0_20px_50px_rgba(0,0,0,0.55),0_0_18px_rgba(34,211,238,0.32)]"
           : ""
       }`}
-      style={{ transform, opacity, zIndex }}
+      style={{
+        transform,
+        opacity,
+        zIndex,
+        width: cardSize.w,
+        height: cardSize.h,
+      }}
       aria-hidden={!isFront}
     >
-      <div className="relative h-[50%] w-full sm:h-[58%]">
+      {/* Image — top 55% */}
+      <div className="relative w-full" style={{ height: "55%" }}>
         <Image
           src={item.image}
           alt={item.title}
           fill
-          sizes="(max-width: 640px) 220px, 280px"
+          sizes="240px"
           className="object-cover"
           draggable={false}
         />
       </div>
-      <div className="flex h-[50%] flex-col gap-1.5 bg-linear-to-t from-slate-950 via-slate-950/95 to-slate-900/90 px-3 py-3 sm:h-[42%] sm:gap-2 sm:px-4 sm:py-4">
-        <span className="w-fit rounded-full bg-linear-to-r from-emerald-200 to-cyan-200 px-2 py-0.5 text-[9px] font-bold tracking-[0.14em] text-slate-900 uppercase sm:px-2.5 sm:py-1 sm:text-[10px]">
+
+      {/* Text — bottom 45% */}
+      <div
+        className="flex flex-col gap-1 bg-gradient-to-t from-slate-950 via-slate-950/95 to-slate-900/90 px-2.5 py-2"
+        style={{ height: "45%" }}
+      >
+        <span className="w-fit rounded-full bg-gradient-to-r from-emerald-200 to-cyan-200 px-1.5 py-0.5 text-[7px] font-bold tracking-[0.12em] text-slate-900 uppercase">
           IITP Fest
         </span>
-        <h3 className="text-lg font-semibold text-slate-50 sm:text-xl">{item.title}</h3>
-        <p className="line-clamp-3 pr-1 text-xs leading-snug text-slate-200 sm:line-clamp-none sm:text-sm sm:leading-relaxed">
+        <h3 className="text-[11px] font-semibold leading-tight text-slate-50 sm:text-xs">
+          {item.title}
+        </h3>
+        <p className="line-clamp-3 text-[9px] leading-snug text-slate-300 sm:text-[10px]">
           {item.description}
         </p>
       </div>
@@ -190,7 +225,8 @@ export default function FestsCarousel3D() {
 
   const rotation = useMotionValue(0);
   const clock = useMotionValue(0);
-  const [radius, setRadius] = useState(500);
+  const [radius, setRadius] = useState(540);
+  const [cardSize, setCardSize] = useState<CardSize>({ w: 240, h: 340 });
   const [frontIndex, setFrontIndex] = useState(0);
 
   const syncFrontIndex = useCallback(
@@ -205,30 +241,15 @@ export default function FestsCarousel3D() {
   );
 
   useEffect(() => {
-    function updateRadius() {
-      const width = window.innerWidth;
-      if (width < 400) {
-        setRadius(130);
-        return;
-      }
-      if (width < 640) {
-        setRadius(180);
-        return;
-      }
-      if (width < 900) {
-        setRadius(280);
-        return;
-      }
-      if (width < 1280) {
-        setRadius(380);
-        return;
-      }
-      setRadius(480);
+    function update() {
+      const w = window.innerWidth;
+      setRadius(getRadius(w));
+      setCardSize(getCardSize(w));
     }
 
-    updateRadius();
-    window.addEventListener("resize", updateRadius);
-    return () => window.removeEventListener("resize", updateRadius);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
   }, []);
 
   useAnimationFrame((_time, delta) => {
@@ -265,7 +286,7 @@ export default function FestsCarousel3D() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="relative min-h-[460px] rounded-3xl border border-slate-200/70 bg-[radial-gradient(circle_at_20%_20%,rgba(34,197,94,0.14),transparent_38%),radial-gradient(circle_at_82%_70%,rgba(6,182,212,0.18),transparent_40%),linear-gradient(155deg,#041125,#102748)] px-2 py-8 shadow-xl sm:min-h-[700px] sm:px-4 sm:py-12"
+      className="relative min-h-[380px] rounded-3xl border border-slate-200/70 bg-[radial-gradient(circle_at_20%_20%,rgba(34,197,94,0.14),transparent_38%),radial-gradient(circle_at_82%_70%,rgba(6,182,212,0.18),transparent_40%),linear-gradient(155deg,#041125,#102748)] px-1 py-8 shadow-xl sm:min-h-[560px] sm:px-3 sm:py-12"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl">
         <div className="absolute -left-10 top-1/3 h-32 w-32 rounded-full bg-cyan-300/30 blur-2xl sm:h-44 sm:w-44 sm:blur-3xl" />
@@ -277,7 +298,7 @@ export default function FestsCarousel3D() {
         role="region"
         aria-label="3D fest carousel"
         tabIndex={0}
-        className="relative h-[380px] w-full cursor-grab touch-pan-y select-none perspective-[1000px] perspective-origin-[center_42%] sm:h-[620px] sm:perspective-[1700px]"
+        className="relative h-[300px] w-full cursor-grab touch-pan-y select-none perspective-[1000px] perspective-origin-[center_42%] sm:h-[480px] sm:perspective-[1700px]"
         onMouseEnter={() => {
           pausedRef.current = true;
         }}
@@ -294,27 +315,19 @@ export default function FestsCarousel3D() {
           event.currentTarget.setPointerCapture(event.pointerId);
         }}
         onPointerMove={(event) => {
-          if (!draggingRef.current) {
-            return;
-          }
-
+          if (!draggingRef.current) return;
           const deltaX = event.clientX - lastPointerXRef.current;
           lastPointerXRef.current = event.clientX;
-
           const nextRotation = rotation.get() + deltaX * 0.34;
           rotation.set(nextRotation);
           velocityRef.current = deltaX * 1.2;
           syncFrontIndex(nextRotation);
         }}
         onPointerUp={(event) => {
-          if (!draggingRef.current) {
-            return;
-          }
-
+          if (!draggingRef.current) return;
           draggingRef.current = false;
           pausedRef.current = false;
           event.currentTarget.releasePointerCapture(event.pointerId);
-
           if (Math.abs(velocityRef.current) < BASE_VELOCITY) {
             velocityRef.current =
               velocityRef.current < 0 ? -BASE_VELOCITY : BASE_VELOCITY;
@@ -331,16 +344,10 @@ export default function FestsCarousel3D() {
           syncFrontIndex(nextRotation);
         }}
         onKeyDown={(event) => {
-          if (event.key === "ArrowRight") {
-            spinBy(1);
-          }
-          if (event.key === "ArrowLeft") {
-            spinBy(-1);
-          }
+          if (event.key === "ArrowRight") spinBy(1);
+          if (event.key === "ArrowLeft") spinBy(-1);
         }}
       >
-        
-
         <div className="absolute inset-0 transform-3d">
           {FEST_DATA.map((item, index) => (
             <FestCard
@@ -348,14 +355,13 @@ export default function FestsCarousel3D() {
               item={item}
               index={index}
               radius={radius}
+              cardSize={cardSize}
               rotation={rotation}
               clock={clock}
               isFront={frontIndex === index}
             />
           ))}
         </div>
-
-        
       </div>
     </motion.div>
   );

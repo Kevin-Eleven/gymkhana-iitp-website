@@ -69,7 +69,7 @@ export const stcClubs: Section = {
   id: 'stc',
   title: 'STC Clubs',
   description:
-    'A tech-driven ecosystem where interdisciplinary projects, competitions, and research thrive.',
+    'Unleashing a tech-driven revolution, where diverse clubs converge,    pioneering minds ignite, and innovative ideas come to life.<br>A symphony of inter-disciplinary projects,competitions& research propels budding engineers to new frontiers & shaping the future <br>of technology and spark groundbreaking innovations.For more details',
   items: [
     {
       name: 'ACE',
@@ -222,7 +222,7 @@ export const hoscaClubs: Section = {
   id: 'hosca',
   title: 'HOSCA Clubs',
   description:
-    'A vibrant cultural ecosystem of art, performance, creativity, and expression.',
+    'HoSCA promotes a diverse and engaging campus experience through cultural events that unite people from different backgrounds. The club organizes activities that foster lifelong learning, community interaction, and showcase the talent of student managers.',
   items: [
     {
       name: 'HOOT',

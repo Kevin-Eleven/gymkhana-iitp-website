@@ -75,21 +75,21 @@ export default function Footer() {
           <p className="mb-4 font-semibold tracking-wide">Follow Us!</p>
           <div className="flex justify-center gap-6">
             <a href="https://www.facebook.com/gymkhana.iitp" aria-label="Facebook">
-              <Facebook className="hover:text-emerald-400 transition" />
+              <Facebook className="hover:text-emerald-400 transition font-bold" />
             </a>
             <a href="https://www.instagram.com/iitpatna_gymkhana/" aria-label="Instagram">
-              <Instagram className="hover:text-emerald-400 transition" />
+              <Instagram className="hover:text-emerald-400 transition font-bold" />
             </a>
             <a href="https://twitter.com/stc_iitp" aria-label="Twitter">
-              <Twitter className="hover:text-emerald-400 transition" />
+              <Twitter className="hover:text-emerald-400 transition font-bold" />
             </a>
-            <a href="/developers" aria-label="Developers">
+            <a href="/developers" aria-label="Developers" className='font-bold hover:text-emerald-400 transition'>
               {/* <img
                 src="/images/dev.png"
                 alt="Developers"
                 className="w-6 h-6 hover:scale-110 hover:opacity-80 transition"
               /> */}
-              Developers
+             {"<DEV/>"}
             </a>
           </div>
         </div>
