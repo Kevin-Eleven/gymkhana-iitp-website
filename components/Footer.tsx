@@ -32,11 +32,11 @@ export default function Footer() {
               IMPORTANT LINKS
             </h3>
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li><a href="https://www.iitp.ac.in/hostel/">Guest Houses</a></li>
-              <li><a href="https://www.iitp.ac.in/services-&-amenities/medical-unit">Medical Unit</a></li>
+              <li><a href="https://www1.iitp.ac.in/index.php/services-amenities/guest-houses">Guest Houses</a></li>
+              <li><a href="https://www1.iitp.ac.in/services-&-amenities/medical-unit">Medical Unit</a></li>
               <li><a href="https://ccdc.iitp.ac.in/">CCDC(TPC)</a></li>
-              <li><a href="https://www.iitp.ac.in/index.php/students/student-activity-center">SAC</a></li>
-              <li><a href="http://www.eclubiitp.org/">Entrepreneurship</a></li>
+              <li><a href="https://www1.iitp.ac.in/index.php/students/student-activity-center">SAC</a></li>
+            
             </ul>
           </div>
 
@@ -47,8 +47,8 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-gray-300 text-sm">
               <li><a href="https://www.iitp.ac.in/">IIT Patna</a></li>
-              <li><a href="https://www.iitp.ac.in/hostel">Hostels</a></li>
-              <li><a href="https://www.iitp.ac.in/hostel/reachIITP.html">Reaching IIT</a></li>
+              <li><a href="https://www1.iitp.ac.in/hostel">Hostels</a></li>
+              <li><a href="https://www1.iitp.ac.in/hostel/reachIITP.html">Reaching IIT</a></li>
               <li><Link href="/office-bearers">Office Bearers</Link></li>
             </ul>
           </div>

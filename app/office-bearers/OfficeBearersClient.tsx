@@ -108,22 +108,34 @@ const years: YearGroup[] = [
         image: '/images/office/suryansh.jpg',
         email: 'suryansh_2101cb58@iitp.ac.in',
       },
+      {
+        name: 'T V S S Soureesh',
+        role: 'Gensec HAC',
+        image: '/images/office/soureesh.jpg',
+        email: 'soureesh_2101mm35@iitp.ac.in',
+      },
+      {
+        name: 'Shivam Kumar Dubey',
+        role: 'Gensec Sports',
+        image: '/images/office/shivam.jpg',
+        email: 'shivam_2101me63@iitp.ac.in',
+      },
     ],
     reps: [
       {
         name: 'Panav Arpit Raaj',
         role: 'UG Representative',
         image: '/images/office/panav.jpg',
-        email: 'pranav_2101cb43@iitp.ac.in',
+        email: 'panav_2101ee48@iitp.ac.in',
       },
       {
         name: 'Aashish Ranjan',
         role: 'PG Representative',
         image: '/images/office/No_Image_Available.jpg',
+        email: 'PGR_GYMKHANA@iitp.ac.in',
       },
     ],
   },
-
   {
     year: '2023–24',
     vp: [
@@ -131,6 +143,7 @@ const years: YearGroup[] = [
         name: 'Atul Kumar',
         role: "VP Gymkhana '23",
         image: '/images/office/No_Image_Available.jpg',
+        email: 'atul_2001cs13@iitp.ac.in',
       },
     ],
     secretaries: [
@@ -138,16 +151,43 @@ const years: YearGroup[] = [
         name: 'Rishikesh Devanathan',
         role: "Gensec Tech '23",
         image: '/images/office/rishi2.jpg',
+        email: 'rishikesh_2001cs85@iitp.ac.in',
+        facebook: 'https://www.facebook.com/rishi.devanathan.5',
+        linkedin: 'https://www.linkedin.com/in/rishikesh-devanathan/',
+        instagram: 'https://www.instagram.com/rishi.devanathan/',
       },
       {
         name: 'Chirag Bhardwaj',
         role: 'Gensec HoSCA',
         image: '/images/office/chirag.png',
+        email: 'chirag_2001mm10@iitp.ac.in',
+        facebook: 'https://www.facebook.com/chirag.bhardwaj.399826',
+        linkedin: 'https://www.linkedin.com/in/chirag-bhardwaj-016428217/',
+        instagram: 'https://www.instagram.com/_chiragbhardwaj3107_/',
       },
       {
         name: 'Shivam Yadav',
         role: 'Gensec Welfare',
         image: '/images/office/2001me70.jpeg',
+        email: 'shivam_2001me70@iitp.ac.in',
+        facebook: 'https://www.facebook.com/profile.php?id=100007390173750',
+        linkedin: 'https://www.linkedin.com/in/shivam-yadav-161a50201/',
+        instagram: 'https://www.instagram.com/_.shivam_.y/',
+      },
+      {
+        name: 'Kautuk Kumar',
+        role: 'Gensec HAC',
+        image: '/images/office/kautuk1.png',
+        email: 'kautuk_2001cs37@iitp.ac.in',
+        facebook: 'https://www.facebook.com/shrishkautuk.king',
+        instagram: 'https://www.instagram.com/kautuk_kumar/',
+      },
+      {
+        name: 'Aaryan Dhakad',
+        role: 'Gensec Sports',
+        image: '/images/office/2001cb01.jpeg',
+        email: 'aaryan_2001cb01@iitp.ac.in',
+        instagram: 'https://www.instagram.com/aaryan_dhakad/',
       },
     ],
     reps: [
@@ -155,15 +195,21 @@ const years: YearGroup[] = [
         name: 'Rohit Kumar',
         role: 'UG Representative',
         image: '/images/office/2001cs55.jpeg',
+        email: 'rohit_2001cs55@iitp.ac.in',
+        facebook: 'https://www.facebook.com/profile.php?id=100007148132611',
+        linkedin: 'https://www.linkedin.com/in/rohit9710/',
+        instagram: 'https://www.instagram.com/rohit_mishra9710/',
       },
       {
         name: 'Chandra Prakash Singh',
         role: 'PG Representative',
         image: '/images/office/1921ee04.jpeg',
+        email: 'chandra_1921ee04@iitp.ac.in',
+        linkedin: 'https://www.linkedin.com/in/chandra-prakash-singh-a5273422b/',
+        instagram: 'https://www.instagram.com/_cp_0706000/',
       },
     ],
   },
-
   {
     year: '2022–23',
     vp: [
@@ -171,12 +217,76 @@ const years: YearGroup[] = [
         name: 'Kandukuri Rahul Preetham',
         role: "VP Gymkhana '22",
         image: '/images/office/RahulP.jpg',
+        email: 'kandukuri_1901me31@iitp.ac.in',
+        facebook: 'https://www.facebook.com/profile.php?id=100009258563783&mibextid=ZbWKwL',
+        linkedin: 'https://www.linkedin.com/in/rahul-preetham-kandukuri',
+        instagram: 'https://instagram.com/rahulpreetham_kandukuri?igshid=MzRlODBiNWFlZA==',
       },
     ],
-    secretaries: [],
-    reps: [],
+    secretaries: [
+      {
+        name: 'Shivam Sahu',
+        role: "Gensec Tech '22",
+        image: '/images/office/ShivamS.jpg',
+        email: 'shivam_1901cs55@iitp.ac.in',
+        facebook: 'https://www.facebook.com/shivam.sahu.33?mibextid=ZbWKwL',
+        linkedin: 'https://www.linkedin.com/in/shivam-sahu-503',
+        instagram: 'https://instagram.com/superb_shivam13?igshid=MzRlODBiNWFlZA==',
+      },
+      {
+        name: 'Malothu Srikar Nayak',
+        role: "Gensec HoSCA '22",
+        image: '/images/office/Srikar.jpg',
+        email: 'malothu_1901ee37@iitp.ac.in',
+        facebook: 'https://www.facebook.com/srikar.nayak.12?mibextid=ZbWKwL',
+        linkedin: 'https://www.linkedin.com/in/srikar-malothu',
+        instagram: 'https://instagram.com/srikar_it_is?igshid=MzRlODBiNWFlZA==',
+      },
+      {
+        name: 'Tarusi Mittal',
+        role: "Gensec Welfare '22",
+        image: '/images/office/Tarushi.jpg',
+        email: 'tarusi_1901cs65@iitp.ac.in',
+        facebook: 'https://www.facebook.com/tarusi.mittal?mibextid=ZbWKwL',
+        linkedin: 'https://www.linkedin.com/in/tarusimittal',
+        instagram: 'https://instagram.com/tarusimittal_12?igshid=MzRlODBiNWFlZA==',
+      },
+      {
+        name: 'Ankit Anurag',
+        role: "Gensec HAC '22",
+        image: '/images/office/Ankit_Anurag_GenSec_HAC.jpg',
+        email: 'ankit_1901ee12@iitp.ac.in',
+        linkedin: 'https://www.linkedin.com/in/anuragankit',
+        instagram: 'https://instagram.com/ankitanurag0704?igshid=MzRlODBiNWFlZA==',
+      },
+      {
+        name: 'Akarsh Yadav',
+        role: "Gensec Sports '22",
+        image: '/images/office/Akarsh.jpg',
+        email: 'akarsh_1901ee08@iitp.ac.in',
+        facebook: 'https://www.facebook.com/profile.php?id=100004801305711&mibextid=ZbWKwL',
+        linkedin: 'https://www.linkedin.com/in/akarsh-yadav-16861b1a4',
+        instagram: 'https://instagram.com/yakarsh09?igshid=MzRlODBiNWFlZA==',
+      },
+    ],
+    reps: [
+      {
+        name: 'Sakshi Singh',
+        role: 'UG Representative',
+        image: '/images/office/Sakshi1.jpg',
+        email: 'sakshi_1901cb40@iitp.ac.in',
+        facebook: 'https://www.facebook.com/profile.php?id=100040510351336&mibextid=ZbWKwL',
+        linkedin: 'https://www.linkedin.com/in/akarsh-yadav-16861b1a4',
+        instagram: 'https://instagram.com/sakshisingh_0410?igshid=MzRlODBiNWFlZA==',
+      },
+      {
+        name: 'Prabhakar Kumar Singh',
+        role: 'PG Representative',
+        image: '/images/office/1921ee04.jpeg',
+        email: 'prabhakar_1921me14@iitp.ac.in',
+      },
+    ],
   },
-
   {
     year: '2021–22',
     vp: [
@@ -184,12 +294,72 @@ const years: YearGroup[] = [
         name: 'Vijaya Gonugade',
         role: "VP Gymkhana '21",
         image: '/images/office/Vijaya.jpg',
+        email: '1801ce32@iitp.ac.in',
+        facebook: 'https://www.facebook.com/vijaya.gonugade.35?mibextid=ZbWKwL',
+        linkedin: 'https://www.linkedin.com/in/vijaya-gonugade-8a6271188/',
+        instagram: 'https://instagram.com/vijayagonugade?igshid=MzRlODBiNWFlZA==',
       },
     ],
-    secretaries: [],
-    reps: [],
+    secretaries: [
+      {
+        name: 'Satyam Shukla',
+        role: "Gensec Tech '21",
+        image: '/images/office/saty.png',
+        email: 'satyam.pee17@iitp.ac.in',
+        facebook: 'https://www.facebook.com/satyam.shukla3?mibextid=ZbWKwL',
+        linkedin: 'https://www.linkedin.com/in/satyam-shukla-606090123/',
+        instagram: 'https://instagram.com/satyam_iitp?igshid=MzRlODBiNWFlZA==',
+      },
+      {
+        name: 'Ankush Panghal',
+        role: "Gensec HoSCA '21",
+        image: '/images/office/Ankush Panghal Gensec HoSCA.png',
+        email: '1801cb04@iitp.ac.in',
+        linkedin: 'http://linkedin.com/in/ankush-panghal-38291416b',
+        instagram: 'https://instagram.com/chaudhary_ankushpanghal?igshid=MzRlODBiNWFlZA==',
+      },
+      {
+        name: 'Shashwat Mahajan',
+        role: "Gensec Welfare '21",
+        image: '/images/office/Shashwat Mahajan_GenSec_Welfare.jpg',
+        email: '1801cs46@iitp.ac.in',
+        facebook: 'https://www.facebook.com/shashwat211?mibextid=ZbWKwL',
+        linkedin: 'https://www.linkedin.com/in/shashwat211/',
+        instagram: 'https://instagram.com/shashwat211?igshid=MzRlODBiNWFlZA==',
+      },
+      {
+        name: 'Vivek Dixit',
+        role: "Gensec HAC '21",
+        image: '/images/office/Vivek_Kumar_GENSEC_HAC_2021.jpeg',
+        instagram: 'https://instagram.com/vivekdixit194?igshid=MzRlODBiNWFlZA==',
+      },
+      {
+        name: 'Jagan Mohan Reddy',
+        role: "Gensec Sports '21",
+        image: '/images/office/Jagan_Mohan_Ex_Gen_Sec_Sports.jpg',
+        email: '1801me34@iitp.ac.in',
+        facebook: 'https://www.facebook.com/jagan.mohan.3760430?mibextid=ZbWKwL',
+        linkedin: 'https://www.linkedin.com/in/jagan-mohan-585295169/',
+        instagram: 'https://instagram.com/jagan_mohan7?igshid=MzRlODBiNWFlZA==',
+      },
+    ],
+    reps: [
+      {
+        name: 'Amish Mittal',
+        role: 'UG Representative',
+        image: '/images/office/amish.jpg',
+        email: '1801cs07@iitp.ac.in',
+        facebook: 'https://www.facebook.com/amish.mittal.fliptrail?mibextid=ZbWKwL',
+        linkedin: 'https://www.linkedin.com/in/amishmittal/',
+        instagram: 'https://instagram.com/fliptrail?igshid=MzRlODBiNWFlZA==',
+      },
+      {
+        name: 'Mukesh',
+        role: 'PG Representative',
+        image: '/images/office/No_Image_Available.jpg',
+      },
+    ],
   },
-
   {
     year: '2020–21',
     vp: [
@@ -197,10 +367,70 @@ const years: YearGroup[] = [
         name: 'Rahul Pandey',
         role: "VP Gymkhana '20",
         image: '/images/office/RahulPan.jpg',
+        email: 'rahulpandey.cs17@iitp.ac.in',
+        facebook: 'https://www.facebook.com/rahulpandey1605/',
+        linkedin: 'https://www.linkedin.com/in/rahulpandey1605/',
       },
     ],
-    secretaries: [],
-    reps: [],
+    secretaries: [
+      {
+        name: 'Satyam Shukla',
+        role: "Gensec Tech '20",
+        image: '/images/office/saty.png',
+        email: 'satyam.pee17@iitp.ac.in',
+        facebook: 'https://www.facebook.com/satyam.shukla3?mibextid=ZbWKwL',
+        linkedin: 'https://www.linkedin.com/in/satyam-shukla-606090123/',
+        instagram: 'https://instagram.com/satyam_iitp?igshid=MzRlODBiNWFlZA==',
+      },
+      {
+        name: 'Priyansh Singh Rao',
+        role: "Gensec HoSCA '20",
+        image: '/images/office/No_Image_Available.jpg',
+        email: 'priyansh.ch17@iitp.ac.in',
+        linkedin: 'https://www.linkedin.com/in/priyanshrao/',
+      },
+      {
+        name: 'Rajeshwar Ojha',
+        role: "Gensec Welfare '20",
+        image: '/images/office/Rajeshwar Ojha.jpg',
+        email: 'rajeshwar.ee17@iitp.ac.in',
+        linkedin: 'https://www.linkedin.com/in/rajeshwar-ojha-56b9b3158/',
+        instagram: 'https://www.instagram.com/o_raju99/',
+      },
+      {
+        name: 'Atul Upadhyay',
+        role: "Gensec HAC '20",
+        image: '/images/office/Atul.jpg',
+        email: 'atul.cs17@iitp.ac.in',
+        linkedin: 'https://www.linkedin.com/in/atul-upadhyay1/',
+        instagram: 'https://www.instagram.com/theatulupadhyay/',
+      },
+      {
+        name: 'Saurabh Suman',
+        role: "Gensec Sports '20",
+        image: '/images/office/No_Image_Available.jpg',
+        email: 'saurabh.pce17@iitp.ac.in',
+        linkedin: 'https://www.linkedin.com/in/saurabh-suman-a92b3880/?originalSubdomain=in',
+      },
+    ],
+    reps: [
+      {
+        name: 'Rakshit Maheshwari',
+        role: 'UG Representative',
+        image: '/images/office/Rakshit Maheshwari.jpg',
+        email: 'rakshit.ce17@iitp.ac.in',
+        linkedin: 'https://www.linkedin.com/in/rakshit-maheshwari-02625818b/',
+        instagram: 'https://www.instagram.com/rakshitmaheshwarii/',
+      },
+      {
+        name: 'Harsh Kasyap',
+        role: 'PG Representative',
+        image: '/images/office/Harsh Kasyap.jpg',
+        email: 'harsh_1921cs01@iitp.ac.in',
+        linkedin: 'https://www.linkedin.com/in/harsh-kasyap/',
+        instagram: 'https://www.instagram.com/_.harsh._78/',
+      },
+    ],
   },
 ];
 
@@ -260,33 +490,43 @@ function PersonCard({ person }: { person: Person }) {
           }}
           className="flex gap-5"
         >
-          {person.email && (
-            <motion.a
-              variants={{
-                rest: { opacity: 0, y: 10 },
-                hover: { opacity: 1, y: 0 },
-              }}
-              href={`mailto:${person.email}`}
-              className="text-gray-700 hover:text-emerald-600"
-            >
-              <Mail />
-            </motion.a>
-          )}
-          {person.facebook && (
-            <motion.a variants={{ rest: { y: 10 }, hover: { y: 0 } }}>
-              <Facebook />
-            </motion.a>
-          )}
-          {person.linkedin && (
-            <motion.a variants={{ rest: { y: 10 }, hover: { y: 0 } }}>
-              <Linkedin />
-            </motion.a>
-          )}
-          {person.instagram && (
-            <motion.a variants={{ rest: { y: 10 }, hover: { y: 0 } }}>
-              <Instagram />
-            </motion.a>
-          )}
+          <motion.a
+            variants={{
+              rest: { opacity: 0, y: 10 },
+              hover: { opacity: 1, y: 0 },
+            }}
+            href={person.email ? `mailto:${person.email}` : '#'}
+            className="text-gray-700 hover:text-emerald-600 transition-colors"
+          >
+            <Mail />
+          </motion.a>
+          <motion.a 
+            variants={{ rest: { y: 10 }, hover: { y: 0 } }}
+            href={person.facebook || '#'}
+            target={person.facebook ? "_blank" : undefined}
+            rel="noopener noreferrer"
+            className="text-gray-700 hover:text-blue-600 transition-colors"
+          >
+            <Facebook />
+          </motion.a>
+          <motion.a 
+            variants={{ rest: { y: 10 }, hover: { y: 0 } }}
+            href={person.linkedin || '#'}
+            target={person.linkedin ? "_blank" : undefined}
+            rel="noopener noreferrer"
+            className="text-gray-700 hover:text-blue-700 transition-colors"
+          >
+            <Linkedin />
+          </motion.a>
+          <motion.a 
+            variants={{ rest: { y: 10 }, hover: { y: 0 } }}
+            href={person.instagram || '#'}
+            target={person.instagram ? "_blank" : undefined}
+            rel="noopener noreferrer"
+            className="text-gray-700 hover:text-pink-600 transition-colors"
+          >
+            <Instagram />
+          </motion.a>
         </motion.div>
       </motion.div>
     </motion.div>
