@@ -342,7 +342,6 @@ export const hoscaClubs: Section = {
       instagram: 'https://www.instagram.com/hexachrome_iitp/',
       facebook: 'https://instagram.com/hexachrome_official?igshid=MzRlODBiNWFlZA==',
       linkedin: 'https://instagram.com/hexachrome_official?igshid=MzRlODBiNWFlZA==',
-      instagram: 'https://instagram.com/hexachrome_official?igshid=MzRlODBiNWFlZA=='
     },
   ],
 };

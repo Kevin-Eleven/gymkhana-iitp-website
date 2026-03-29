@@ -24,7 +24,7 @@ export default function Page() {
     ...loadFest('Infinito'),
     ...loadFest('InvisionX'),
     ...loadFest('TEDx'),
-  ];
+  ] as any;
 
   return <FestsGalleryClient images={images} />;
 }
