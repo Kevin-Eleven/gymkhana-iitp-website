@@ -31,12 +31,12 @@ export default function FestsGalleryClient({ images }: { images: ImageItem[] }) 
     <main className="min-h-screen bg-[#f4f7fe] pt-24 px-4">
       <div className="max-w-6xl mx-auto">
 
-        <h1 className="text-4xl font-bold text-center mb-12">
+        <h1 className="text-4xl font-bold text-black text-center mb-12">
           Fests Gallery
         </h1>
 
         {/* Tabs (Same as main gallery) */}
-        <div className="flex flex-wrap justify-center gap-8 mb-14 text-sm font-semibold">
+        <div className="flex flex-wrap justify-center gap-8 mb-14 text-lg font-semibold">
           {categories.map((cat) => (
             <button
               key={cat.value}
@@ -58,7 +58,7 @@ export default function FestsGalleryClient({ images }: { images: ImageItem[] }) 
         {/* Grid Gallery */}
         <motion.div
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pb-12"
         >
           <AnimatePresence>
             {filteredImages.map((img) => (

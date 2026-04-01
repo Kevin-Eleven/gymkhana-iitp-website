@@ -52,6 +52,14 @@ export default function Footer() {
               <li><a href="https://www1.iitp.ac.in/hostel">Hostels</a></li>
               <li><a href="https://www1.iitp.ac.in/hostel/reachIITP.html">Reaching IIT</a></li>
               <li><Link href="/office-bearers">Office Bearers</Link></li>
+              <li><a href="/developers" aria-label="Developers" className=''>
+              {/* <img
+                src="/images/dev.png"
+                alt="Developers"
+                className="w-6 h-6 hover:scale-110 hover:opacity-80 transition"
+              /> */}
+             {"<DEV/>"}
+            </a></li>
             </ul>
           </div>
 
@@ -85,14 +93,7 @@ export default function Footer() {
             <a href="https://twitter.com/stc_iitp" aria-label="Twitter">
               <Twitter className="hover:text-emerald-400 transition font-bold" />
             </a>
-            <a href="/developers" aria-label="Developers" className='font-bold hover:text-emerald-400 transition'>
-              {/* <img
-                src="/images/dev.png"
-                alt="Developers"
-                className="w-6 h-6 hover:scale-110 hover:opacity-80 transition"
-              /> */}
-             {"<DEV/>"}
-            </a>
+            
           </div>
         </div>
       </div>

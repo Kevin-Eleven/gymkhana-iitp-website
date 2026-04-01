@@ -45,13 +45,15 @@ export const societies: Section = {
       logo: './images/sports.png',
       description:
         'The Sports Council at IIT Patna is where passion meets athleticism. We provide a platform for students to unleash their sporting prowess, fostering teamwork, discipline, and a healthy competitive spirit. Join us and let the games begin!',
+      instagram: 'https://www.instagram.com/iitpatna_sports/',
     },
     {
       name: 'ACC',
       logo: './images/acc_1.png',
       description:
         'The Academics Council at IIT Patna is the intellectual hub where knowledge thrives. We strive to create a conducive environment for academic excellence, fostering curiosity, critical thinking, and innovation. Join us on a journey of intellectual growth and endless possibilities.',
-      website: 'https://acc.iitp.ac.in/'
+      website: 'https://acc.iitp.ac.in/',
+      instagram: 'https://www.instagram.com/iitpatna_acc/'
     },
     {
       name: 'SWB',

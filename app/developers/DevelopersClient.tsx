@@ -16,12 +16,12 @@ interface Dev {
 const advisory: Dev[] = [
   {
     name: 'Akhand Singh',
-    role: "Gensec Tech '25",
+    role: "General Secretary, Technical '25",
     image: '/images/dev/Akhand Singh.jpg',
   },
   {
     name: 'Shivank Goyal',
-    role: 'Junior Year Technical Secretary',
+    role: "Junior Year Secretary, Technical '25",
     image: '/images/dev/Shivank_Goyal.jpeg',
   },
 ];
@@ -112,7 +112,7 @@ function DevCard({ dev, index, showLinks }: { dev: Dev; index: number; showLinks
       transition={{ duration: 0.55, delay: index * 0.15, ease: 'easeOut' }}
       className="group relative w-64"
     >
-      {/* Hover green border glow */}
+    
       <div className="absolute -inset-0.5 rounded-2xl bg-linear-to-r from-[#6b7fc6] to-[#2a3f85] opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
 
       <div className="relative bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm group-hover:shadow-lg transition-shadow duration-300">
